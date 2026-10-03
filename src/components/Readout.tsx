@@ -12,6 +12,12 @@ interface Props {
   quick: readonly Drink[];
 }
 
+/** "A black tea", "An energy drink", "Half a drip coffee" — sentence-start noun phrase. */
+export function withArticle(label: string): string {
+  if (/^half\b/i.test(label)) return label.charAt(0).toUpperCase() + label.slice(1);
+  return `${/^[aeiou]/i.test(label) ? 'An' : 'A'} ${label}`;
+}
+
 /** "≈140", but a plain "0" when nothing is measurable. */
 export const approx = (mg: number) => (roundMg(mg) === 0 ? '0' : `≈${roundMg(mg)}`);
 
@@ -124,7 +130,7 @@ function CutoffChannel({ day, previewDay, preview, settings, quick }: Props) {
   const passed = c.passedAt ? `Cutoff was ${formatTime(c.passedAt)}. ` : '';
   const alternative =
     fits.kind === 'drink'
-      ? `A ${fits.label} (${fits.mg} mg) still fits until ${formatTime(fits.until)}.`
+      ? `${withArticle(fits.label)} (${fits.mg} mg) still fits until ${formatTime(fits.until)}.`
       : fits.kind === 'decaf-only'
         ? 'Only decaf fits now.'
         : fits.at !== null
