@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Caffeine Recorder",
+  "short_name": "Caffeine",
+  "description": "Track caffeine as a dose over time: what's active now, what's left at bedtime, and when to have your last cup.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#d3d9d6",
+  "theme_color": "#d3d9d6",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

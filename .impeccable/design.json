@@ -1,0 +1,1144 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T19:37:11+00:00",
+  "title": "Design System: Caffeine Recorder",
+  "extensions": {
+    "colorMeta": {
+      "pen-caffeine": {
+        "role": "primary",
+        "displayName": "Pen 1: Caffeine Crimson",
+        "canonical": "#b4123e",
+        "tonalRamp": [
+          "#1e0004",
+          "#4c0014",
+          "#7c0d29",
+          "#b3103d",
+          "#dc425d",
+          "#fa7484",
+          "#fcb3b7",
+          "#ffe8e9"
+        ]
+      },
+      "pen-caffeine-band": {
+        "role": "primary",
+        "displayName": "Pen 1 Band",
+        "canonical": "rgb(180 18 62 / 0.075)",
+        "tonalRamp": [
+          "#1e0004",
+          "#4c0014",
+          "#7c0d29",
+          "#b3103d",
+          "#dc425d",
+          "#fa7484",
+          "#fcb3b7",
+          "#ffe8e9"
+        ]
+      },
+      "print": {
+        "role": "secondary",
+        "displayName": "Chart-Paper Green",
+        "canonical": "#2b6a4c",
+        "tonalRamp": [
+          "#000f06",
+          "#032d1b",
+          "#074f33",
+          "#316f51",
+          "#539272",
+          "#76b594",
+          "#9adab7",
+          "#c2ffdd"
+        ]
+      },
+      "grid-minor": {
+        "role": "secondary",
+        "displayName": "Minor Ruling",
+        "canonical": "rgb(46 125 88 / 0.14)",
+        "tonalRamp": [
+          "#000f07",
+          "#012d1b",
+          "#034f32",
+          "#20724e",
+          "#47946e",
+          "#6bb890",
+          "#8fddb3",
+          "#c5fede"
+        ]
+      },
+      "grid-major": {
+        "role": "secondary",
+        "displayName": "Major Ruling",
+        "canonical": "rgb(46 125 88 / 0.36)",
+        "tonalRamp": [
+          "#000f07",
+          "#012d1b",
+          "#034f32",
+          "#20724e",
+          "#47946e",
+          "#6bb890",
+          "#8fddb3",
+          "#c5fede"
+        ]
+      },
+      "lamp-ok": {
+        "role": "tertiary",
+        "displayName": "Lamp Green",
+        "canonical": "#23a861",
+        "tonalRamp": [
+          "#001004",
+          "#032e16",
+          "#07502a",
+          "#05753f",
+          "#049c56",
+          "#44c077",
+          "#6ee69b",
+          "#c6ffd6"
+        ]
+      },
+      "lamp-warn": {
+        "role": "tertiary",
+        "displayName": "Lamp Amber",
+        "canonical": "#d99a00",
+        "tonalRamp": [
+          "#120900",
+          "#332100",
+          "#583c00",
+          "#7e5a0c",
+          "#a97811",
+          "#d39923",
+          "#fdbc42",
+          "#ffecce"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Focus Blue",
+        "canonical": "#1663c7",
+        "tonalRamp": [
+          "#000a21",
+          "#002252",
+          "#003e89",
+          "#0c5cc0",
+          "#3780e7",
+          "#6ca6fa",
+          "#aacbfc",
+          "#e5effe"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Danger Red",
+        "canonical": "#a3122f",
+        "tonalRamp": [
+          "#220004",
+          "#4d0311",
+          "#7f0421",
+          "#b1253a",
+          "#db4f5b",
+          "#fe7d83",
+          "#febebe",
+          "#ffe8e8"
+        ]
+      },
+      "housing": {
+        "role": "neutral",
+        "displayName": "Enamel Housing",
+        "canonical": "#d3d9d6",
+        "tonalRamp": [
+          "#080c0a",
+          "#222624",
+          "#3e4341",
+          "#5d6360",
+          "#7e8481",
+          "#a1a7a4",
+          "#c5cbc8",
+          "#eaf0ed"
+        ]
+      },
+      "housing-raised": {
+        "role": "neutral",
+        "displayName": "Raised Housing",
+        "canonical": "#dfe4e1",
+        "tonalRamp": [
+          "#090c0a",
+          "#222624",
+          "#3f4341",
+          "#5e6260",
+          "#7f8481",
+          "#a2a6a3",
+          "#c6cac8",
+          "#ebf0ed"
+        ]
+      },
+      "housing-sunk": {
+        "role": "neutral",
+        "displayName": "Sunk Housing",
+        "canonical": "#c5ccc9",
+        "tonalRamp": [
+          "#080c0a",
+          "#212624",
+          "#3e4441",
+          "#5d6360",
+          "#7e8481",
+          "#a0a7a4",
+          "#c4cbc8",
+          "#e9f0ed"
+        ]
+      },
+      "seam": {
+        "role": "neutral",
+        "displayName": "Seam",
+        "canonical": "#aab3af",
+        "tonalRamp": [
+          "#070d0a",
+          "#202724",
+          "#3c4441",
+          "#5b6360",
+          "#7c8581",
+          "#9fa7a3",
+          "#c2ccc8",
+          "#e8f1ed"
+        ]
+      },
+      "bezel": {
+        "role": "neutral",
+        "displayName": "Bezel",
+        "canonical": "#22282a",
+        "tonalRamp": [
+          "#070c0e",
+          "#202628",
+          "#3d4345",
+          "#5c6365",
+          "#7c8486",
+          "#9fa6a9",
+          "#c3cbcd",
+          "#e8f0f3"
+        ]
+      },
+      "bezel-edge": {
+        "role": "neutral",
+        "displayName": "Bezel Edge",
+        "canonical": "#3a4244",
+        "tonalRamp": [
+          "#060c0e",
+          "#1f2728",
+          "#3c4446",
+          "#5a6365",
+          "#7b8486",
+          "#9ea7a9",
+          "#c1cbce",
+          "#e7f1f3"
+        ]
+      },
+      "bezel-legend": {
+        "role": "neutral",
+        "displayName": "Bezel Legend",
+        "canonical": "#9fb0aa",
+        "tonalRamp": [
+          "#030e0a",
+          "#1b2824",
+          "#374641",
+          "#566560",
+          "#768781",
+          "#99aaa4",
+          "#bccec8",
+          "#e1f3ed"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chart Paper",
+        "canonical": "#f6faf4",
+        "tonalRamp": [
+          "#0a0c08",
+          "#232622",
+          "#40433e",
+          "#5f625d",
+          "#80847e",
+          "#a3a6a1",
+          "#c7cac5",
+          "#ecf0ea"
+        ]
+      },
+      "paper-night": {
+        "role": "neutral",
+        "displayName": "Sleep Paper",
+        "canonical": "#e7efe8",
+        "tonalRamp": [
+          "#080d08",
+          "#212722",
+          "#3e443e",
+          "#5c635d",
+          "#7d857e",
+          "#a0a7a1",
+          "#c4ccc5",
+          "#e9f1ea"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1b2220",
+        "tonalRamp": [
+          "#070d0b",
+          "#202725",
+          "#3c4442",
+          "#5b6361",
+          "#7c8582",
+          "#9ea7a5",
+          "#c2ccc9",
+          "#e7f1ee"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#47524f",
+        "tonalRamp": [
+          "#050d0b",
+          "#1e2725",
+          "#3a4542",
+          "#596461",
+          "#798582",
+          "#9ca8a5",
+          "#c0ccc9",
+          "#e5f2ee"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "#525d59",
+        "tonalRamp": [
+          "#070f0c",
+          "#1f2925",
+          "#3b4541",
+          "#5b6662",
+          "#7e8985",
+          "#a2aeaa",
+          "#c8d4d0",
+          "#e5f2ed"
+        ]
+      },
+      "pencil": {
+        "role": "neutral",
+        "displayName": "Pencil",
+        "canonical": "#59625f",
+        "tonalRamp": [
+          "#060d0b",
+          "#1f2725",
+          "#3c4441",
+          "#5b6461",
+          "#7b8582",
+          "#9ea8a4",
+          "#c2ccc8",
+          "#e7f1ee"
+        ]
+      },
+      "cursor": {
+        "role": "neutral",
+        "displayName": "Cursor",
+        "canonical": "#1b2220",
+        "tonalRamp": [
+          "#070d0b",
+          "#202725",
+          "#3c4442",
+          "#5b6361",
+          "#7c8582",
+          "#9ea7a5",
+          "#c2ccc9",
+          "#e7f1ee"
+        ]
+      },
+      "key": {
+        "role": "neutral",
+        "displayName": "Keycap",
+        "canonical": "#f1f4f2",
+        "tonalRamp": [
+          "#0a0c0a",
+          "#232624",
+          "#404341",
+          "#5f6260",
+          "#808381",
+          "#a3a6a4",
+          "#c7cac8",
+          "#ecefed"
+        ]
+      },
+      "key-top": {
+        "role": "neutral",
+        "displayName": "Keycap Top",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "key-edge": {
+        "role": "neutral",
+        "displayName": "Keycap Edge",
+        "canonical": "#9ea8a4",
+        "tonalRamp": [
+          "#060d0a",
+          "#1f2724",
+          "#3c4441",
+          "#5a6460",
+          "#7b8581",
+          "#9ea8a4",
+          "#c2ccc8",
+          "#e7f1ed"
+        ]
+      },
+      "pen-caffeine-dark": {
+        "role": "primary",
+        "displayName": "Pen 1: Luminous Rose (night chart)",
+        "canonical": "#ff5a7e",
+        "tonalRamp": [
+          "#1e0006",
+          "#4b0118",
+          "#7e022e",
+          "#b11446",
+          "#df3a64",
+          "#fd708a",
+          "#feb1bb",
+          "#fee8ea"
+        ]
+      },
+      "pen-caffeine-band-dark": {
+        "role": "primary",
+        "displayName": "Pen 1 Band (night chart)",
+        "canonical": "rgb(255 90 126 / 0.1)",
+        "tonalRamp": [
+          "#1e0006",
+          "#4b0118",
+          "#7e022e",
+          "#b11446",
+          "#df3a64",
+          "#fd708a",
+          "#feb1bb",
+          "#fee8ea"
+        ]
+      },
+      "print-dark": {
+        "role": "secondary",
+        "displayName": "Chart-Paper Green (night chart)",
+        "canonical": "#7cc3a0",
+        "tonalRamp": [
+          "#000f07",
+          "#012d1c",
+          "#024f34",
+          "#287152",
+          "#4c9372",
+          "#70b794",
+          "#94dcb8",
+          "#c5fee0"
+        ]
+      },
+      "grid-minor-dark": {
+        "role": "secondary",
+        "displayName": "Minor Ruling (night chart)",
+        "canonical": "rgb(110 205 160 / 0.07)",
+        "tonalRamp": [
+          "#000f07",
+          "#002e1c",
+          "#0b4e35",
+          "#0e734e",
+          "#34976d",
+          "#5cbb8f",
+          "#81e0b2",
+          "#c4fedf"
+        ]
+      },
+      "grid-major-dark": {
+        "role": "secondary",
+        "displayName": "Major Ruling (night chart)",
+        "canonical": "rgb(110 205 160 / 0.18)",
+        "tonalRamp": [
+          "#000f07",
+          "#002e1c",
+          "#0b4e35",
+          "#0e734e",
+          "#34976d",
+          "#5cbb8f",
+          "#81e0b2",
+          "#c4fedf"
+        ]
+      },
+      "lamp-ok-dark": {
+        "role": "tertiary",
+        "displayName": "Lamp Green (night chart)",
+        "canonical": "#3ddc84",
+        "tonalRamp": [
+          "#000f05",
+          "#012e16",
+          "#03502a",
+          "#147441",
+          "#1b9b58",
+          "#0bc46e",
+          "#50ea91",
+          "#c8fed8"
+        ]
+      },
+      "lamp-warn-dark": {
+        "role": "tertiary",
+        "displayName": "Lamp Amber (night chart)",
+        "canonical": "#ffbf3d",
+        "tonalRamp": [
+          "#120900",
+          "#322202",
+          "#563d05",
+          "#7e5a03",
+          "#a87902",
+          "#d39a16",
+          "#fdbd3a",
+          "#ffeccd"
+        ]
+      },
+      "focus-dark": {
+        "role": "tertiary",
+        "displayName": "Focus Blue (night chart)",
+        "canonical": "#6aa8ff",
+        "tonalRamp": [
+          "#000a22",
+          "#012350",
+          "#023f86",
+          "#235fb0",
+          "#4682d6",
+          "#68a6fd",
+          "#a8ccfd",
+          "#e5effe"
+        ]
+      },
+      "danger-dark": {
+        "role": "tertiary",
+        "displayName": "Danger Red (night chart)",
+        "canonical": "#ff8a7a",
+        "tonalRamp": [
+          "#220000",
+          "#4e0302",
+          "#7e0f0a",
+          "#a63a2f",
+          "#cf5f51",
+          "#f98475",
+          "#febfb5",
+          "#fee9e5"
+        ]
+      },
+      "housing-dark": {
+        "role": "neutral",
+        "displayName": "Enamel Housing (night chart)",
+        "canonical": "#141918",
+        "tonalRamp": [
+          "#080c0b",
+          "#222625",
+          "#3e4342",
+          "#5d6261",
+          "#7e8482",
+          "#a1a6a5",
+          "#c5cbc9",
+          "#eaf0ee"
+        ]
+      },
+      "housing-raised-dark": {
+        "role": "neutral",
+        "displayName": "Raised Housing (night chart)",
+        "canonical": "#1b2120",
+        "tonalRamp": [
+          "#080c0b",
+          "#212625",
+          "#3e4342",
+          "#5d6361",
+          "#7e8483",
+          "#a0a7a5",
+          "#c4cbc9",
+          "#e9f0ef"
+        ]
+      },
+      "housing-sunk-dark": {
+        "role": "neutral",
+        "displayName": "Sunk Housing (night chart)",
+        "canonical": "#0e1211",
+        "tonalRamp": [
+          "#090c0b",
+          "#232625",
+          "#3f4342",
+          "#5e6261",
+          "#7f8382",
+          "#a2a6a5",
+          "#c6cac9",
+          "#ebf0ee"
+        ]
+      },
+      "seam-dark": {
+        "role": "neutral",
+        "displayName": "Seam (night chart)",
+        "canonical": "#2a3230",
+        "tonalRamp": [
+          "#060d0b",
+          "#1f2725",
+          "#3c4442",
+          "#5b6361",
+          "#7b8582",
+          "#9ea7a5",
+          "#c2ccc9",
+          "#e7f1ee"
+        ]
+      },
+      "bezel-dark": {
+        "role": "neutral",
+        "displayName": "Bezel (night chart)",
+        "canonical": "#030505",
+        "tonalRamp": [
+          "#090c0c",
+          "#232626",
+          "#3f4343",
+          "#5e6262",
+          "#7f8383",
+          "#a2a6a6",
+          "#c6caca",
+          "#ebefef"
+        ]
+      },
+      "bezel-edge-dark": {
+        "role": "neutral",
+        "displayName": "Bezel Edge (night chart)",
+        "canonical": "#222a29",
+        "tonalRamp": [
+          "#070d0c",
+          "#202726",
+          "#3c4443",
+          "#5b6362",
+          "#7c8483",
+          "#9ea7a6",
+          "#c2cbca",
+          "#e7f1ef"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Chart Paper (night chart)",
+        "canonical": "#121a17",
+        "tonalRamp": [
+          "#070d0b",
+          "#202724",
+          "#3d4441",
+          "#5c6361",
+          "#7d8482",
+          "#9fa7a4",
+          "#c3cbc8",
+          "#e8f1ee"
+        ]
+      },
+      "paper-night-dark": {
+        "role": "neutral",
+        "displayName": "Sleep Paper (night chart)",
+        "canonical": "#0b100e",
+        "tonalRamp": [
+          "#07100c",
+          "#1f2925",
+          "#3a4541",
+          "#5b6661",
+          "#7d8984",
+          "#a2aea9",
+          "#c7d5cf",
+          "#e5f2ec"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink (night chart)",
+        "canonical": "#e3e9e6",
+        "tonalRamp": [
+          "#080c0a",
+          "#222624",
+          "#3e4341",
+          "#5d6360",
+          "#7e8481",
+          "#a1a7a4",
+          "#c5cbc8",
+          "#eaf0ed"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Ink 2 (night chart)",
+        "canonical": "#a9b4b0",
+        "tonalRamp": [
+          "#060d0a",
+          "#1f2724",
+          "#3b4441",
+          "#5a6460",
+          "#7b8581",
+          "#9da8a4",
+          "#c1ccc8",
+          "#e6f2ed"
+        ]
+      },
+      "ink-3-dark": {
+        "role": "neutral",
+        "displayName": "Ink 3 (night chart)",
+        "canonical": "#8b9692",
+        "tonalRamp": [
+          "#060d0a",
+          "#1e2724",
+          "#3b4541",
+          "#5a6460",
+          "#7a8581",
+          "#9da8a4",
+          "#c1ccc8",
+          "#e6f2ed"
+        ]
+      },
+      "pencil-dark": {
+        "role": "neutral",
+        "displayName": "Pencil (night chart)",
+        "canonical": "#9aa5a1",
+        "tonalRamp": [
+          "#060d0a",
+          "#1e2724",
+          "#3b4441",
+          "#5a6460",
+          "#7b8581",
+          "#9da8a4",
+          "#c1ccc8",
+          "#e6f2ed"
+        ]
+      },
+      "cursor-dark": {
+        "role": "neutral",
+        "displayName": "Cursor (night chart)",
+        "canonical": "#e3e9e6",
+        "tonalRamp": [
+          "#080c0a",
+          "#222624",
+          "#3e4341",
+          "#5d6360",
+          "#7e8481",
+          "#a1a7a4",
+          "#c5cbc8",
+          "#eaf0ed"
+        ]
+      },
+      "key-dark": {
+        "role": "neutral",
+        "displayName": "Keycap (night chart)",
+        "canonical": "#1f2624",
+        "tonalRamp": [
+          "#070d0b",
+          "#202725",
+          "#3c4442",
+          "#5b6361",
+          "#7c8482",
+          "#9ea7a5",
+          "#c2cbc9",
+          "#e7f1ee"
+        ]
+      },
+      "key-top-dark": {
+        "role": "neutral",
+        "displayName": "Keycap Top (night chart)",
+        "canonical": "#283130",
+        "tonalRamp": [
+          "#060d0c",
+          "#1e2726",
+          "#3b4443",
+          "#5a6462",
+          "#7a8584",
+          "#9da8a6",
+          "#c1cccb",
+          "#e6f1f0"
+        ]
+      },
+      "key-edge-dark": {
+        "role": "neutral",
+        "displayName": "Keycap Edge (night chart)",
+        "canonical": "#39433f",
+        "tonalRamp": [
+          "#050d0a",
+          "#1e2724",
+          "#3b4541",
+          "#596460",
+          "#7a8581",
+          "#9da8a3",
+          "#c0ccc7",
+          "#e5f2ed"
+        ]
+      },
+      "alarm": {
+        "role": "tertiary",
+        "displayName": "Alarm Amber",
+        "canonical": "#7a4f00",
+        "tonalRamp": [
+          "#160b00",
+          "#372101",
+          "#5c3a01",
+          "#855913",
+          "#aa7c3c",
+          "#d1a162",
+          "#f9c787",
+          "#feebd4"
+        ]
+      },
+      "alarm-dark": {
+        "role": "tertiary",
+        "displayName": "Alarm Amber (night chart)",
+        "canonical": "#ffc24d",
+        "tonalRamp": [
+          "#150b00",
+          "#342300",
+          "#573d05",
+          "#815c02",
+          "#ad7c09",
+          "#da9f1b",
+          "#fec763",
+          "#ffeccd"
+        ]
+      },
+      "on-fill": {
+        "role": "neutral",
+        "displayName": "On-Fill",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0d0d0d",
+          "#262626",
+          "#424242",
+          "#636363",
+          "#868686",
+          "#ababab",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "on-fill-dark": {
+        "role": "neutral",
+        "displayName": "On-Fill (night chart)",
+        "canonical": "#0d1311",
+        "tonalRamp": [
+          "#090f0d",
+          "#222826",
+          "#3d4442",
+          "#5e6563",
+          "#808885",
+          "#a5adaa",
+          "#cbd3d0",
+          "#e8f1ee"
+        ]
+      },
+      "bezel-highlight": {
+        "role": "neutral",
+        "displayName": "Bezel Highlight",
+        "canonical": "rgb(255 255 255 / 0.4)"
+      },
+      "bezel-highlight-dark": {
+        "role": "neutral",
+        "displayName": "Bezel Highlight (night chart)",
+        "canonical": "rgb(255 255 255 / 0.04)"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page title on Calibrate. The dashboard h1 is visually hidden; the chart is the headline."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Readout channel values; 1.2rem at 600px and below, unit trailing at 1rem/500 in Ink 2."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section titles and Calibrate section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default running text and log rows. Tabular figures inherited everywhere."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Channel labels and notes, hints, help text, notices; 60-65ch measure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, legends, buttons, nav links, keycap names."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Chart caption, archive legend, picker serving lines, footer."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Condensed mg numerals off the paper: keycaps, log, picker, archive totals; Calibrate values at 1.2rem."
+      },
+      "plate": {
+        "displayName": "Plate",
+        "purpose": "Bezel plate, uppercase with 0.08em tracking. Requests 400, renders with the shipped Condensed 500 face."
+      },
+      "scale": {
+        "displayName": "Scale",
+        "purpose": "Chart axis numerals and hours, meter labels, archive hour axis. Requests 400, renders with the shipped Condensed 500 face."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Labels written on the paper; flags step to 11.5px uppercase 0.04em, cursor chip 12px, event labels 10.5px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "bezel",
+        "value": "inset 0 1px 0 var(--bezel-edge), 0 1px 0 rgb(255 255 255 / 0.4), 0 6px 18px rgb(20 30 26 / 0.18)",
+        "purpose": "The bezel around the chart paper: inner top lip, light catch, soft drop. The white catch is a day-chart literal the build also applies on the night chart."
+      },
+      {
+        "name": "key-shadow",
+        "value": "0 2px 0 #8f9995, 0 3px 6px rgb(20 30 26 / 0.18)",
+        "dark": "0 2px 0 #050707, 0 3px 6px rgb(0 0 0 / 0.5)",
+        "purpose": "Keycap at rest: hard 2px base plus a short soft shadow."
+      },
+      {
+        "name": "key-shadow-pressed",
+        "value": "0 0 0 #8f9995, 0 1px 2px rgb(20 30 26 / 0.2)",
+        "dark": "0 0 0 #050707, 0 1px 2px rgb(0 0 0 / 0.5)",
+        "purpose": "Keycap pressed or armed; paired with translateY(2px)."
+      },
+      {
+        "name": "snackbar",
+        "value": "0 6px 20px rgb(0 0 0 / 0.25)",
+        "purpose": "The one floating layer."
+      },
+      {
+        "name": "lamp-glow",
+        "value": "0 0 0 2px rgb(0 0 0 / 0.08), 0 0 6px var(--lamp-ok)",
+        "purpose": "Status lamp ring and glow in the lamp color (var(--lamp-warn) in the warn state)."
+      },
+      {
+        "name": "key-well",
+        "value": "inset 0 2px 4px rgb(0 0 0 / 0.14), inset 0 0 0 1px rgb(0 0 0 / 0.06)",
+        "description": "The recessed tray the event keys sit in."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one easing curve (--ease-out) for every transition and animation."
+      },
+      {
+        "name": "replot",
+        "value": "700ms clip-path inset(0 100% 0 0) -> inset(0 0 0 0), var(--ease-out)",
+        "purpose": "After a drink is logged, the band and projection wipe in left to right. Only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "key-travel",
+        "value": "120ms transform translateY(2px) + box-shadow, var(--ease-out)",
+        "purpose": "Keycap press and arm."
+      },
+      {
+        "name": "control-hover",
+        "value": "120ms background-color, border-color",
+        "purpose": "Buttons and keycap edges on hover."
+      },
+      {
+        "name": "snackbar-rise",
+        "value": "220ms translate(-50%, 12px) + opacity 0 -> rest, var(--ease-out)",
+        "purpose": "Snackbar entrance. Only under prefers-reduced-motion: no-preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "keys-four",
+        "value": "1080px",
+        "purpose": "max-width: event keys go from 7 columns to 4."
+      },
+      {
+        "name": "stack",
+        "value": "900px",
+        "purpose": "max-width: readout drops beneath the chart as a 2x2 grid; lower deck stacks; paper min-height 300px."
+      },
+      {
+        "name": "phone",
+        "value": "600px",
+        "purpose": "max-width: 3 key columns, bezel 6px padding / 8px radius, paper min-height 250px, smaller readout values, Calibrate rows collapse."
+      },
+      {
+        "name": "chart-compact",
+        "value": "560px",
+        "purpose": "Paper width (measured in JS), not viewport: tighter plot margins, hour labels every 4 h."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Recorder",
+      "kind": "custom",
+      "refersTo": "bezel",
+      "description": "Signature: the dark bezel, its plate, and green-ruled chart paper with the pen trace, projection, band, bedtime and last-cup rules.",
+      "html": "<figure class=\"ds-bezel\"><div class=\"ds-plate\"><span><span class=\"ds-swatch\"></span>Pen 1 · Caffeine active · mg</span><span>9:45 AM</span></div><div class=\"ds-paper\"><svg class=\"ds-chart\" viewBox=\"0 0 364 180\" role=\"img\" aria-label=\"Estimated caffeine active now: about 64 mg. At bedtime: about 12 mg; your target is 30 mg.\"><rect class=\"ds-sleep\" x=\"308.0\" y=\"26\" width=\"48.0\" height=\"124\"/><line class=\"ds-gmaj\" x1=\"36.0\" x2=\"36.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"44.0\" x2=\"44.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"52.0\" x2=\"52.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"60.0\" x2=\"60.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"68.0\" x2=\"68.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"76.0\" x2=\"76.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"84.0\" x2=\"84.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"92.0\" x2=\"92.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"100.0\" x2=\"100.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"108.0\" x2=\"108.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"116.0\" x2=\"116.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"124.0\" x2=\"124.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"132.0\" x2=\"132.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"140.0\" x2=\"140.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"148.0\" x2=\"148.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"156.0\" x2=\"156.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"164.0\" x2=\"164.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"172.0\" x2=\"172.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"180.0\" x2=\"180.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"188.0\" x2=\"188.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"196.0\" x2=\"196.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"204.0\" x2=\"204.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"212.0\" x2=\"212.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"220.0\" x2=\"220.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"228.0\" x2=\"228.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"236.0\" x2=\"236.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"244.0\" x2=\"244.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"252.0\" x2=\"252.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"260.0\" x2=\"260.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"268.0\" x2=\"268.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"276.0\" x2=\"276.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"284.0\" x2=\"284.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"292.0\" x2=\"292.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"300.0\" x2=\"300.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"308.0\" x2=\"308.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"316.0\" x2=\"316.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"324.0\" x2=\"324.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"332.0\" x2=\"332.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"340.0\" x2=\"340.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmin\" x1=\"348.0\" x2=\"348.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"356.0\" x2=\"356.0\" y1=\"26\" y2=\"150\"/><line class=\"ds-gmaj\" x1=\"36\" x2=\"356\" y1=\"150.0\" y2=\"150.0\"/><line class=\"ds-gmin\" x1=\"36\" x2=\"356\" y1=\"134.5\" y2=\"134.5\"/><line class=\"ds-gmaj\" x1=\"36\" x2=\"356\" y1=\"119.0\" y2=\"119.0\"/><line class=\"ds-gmin\" x1=\"36\" x2=\"356\" y1=\"103.5\" y2=\"103.5\"/><line class=\"ds-gmaj\" x1=\"36\" x2=\"356\" y1=\"88.0\" y2=\"88.0\"/><line class=\"ds-gmin\" x1=\"36\" x2=\"356\" y1=\"72.5\" y2=\"72.5\"/><line class=\"ds-gmaj\" x1=\"36\" x2=\"356\" y1=\"57.0\" y2=\"57.0\"/><line class=\"ds-gmin\" x1=\"36\" x2=\"356\" y1=\"41.5\" y2=\"41.5\"/><line class=\"ds-gmaj\" x1=\"36\" x2=\"356\" y1=\"26.0\" y2=\"26.0\"/><text class=\"ds-scale\" x=\"31\" y=\"154.0\" text-anchor=\"end\">0</text><text class=\"ds-scale\" x=\"31\" y=\"123.0\" text-anchor=\"end\">50</text><text class=\"ds-scale\" x=\"31\" y=\"92.0\" text-anchor=\"end\">100</text><text class=\"ds-scale\" x=\"31\" y=\"61.0\" text-anchor=\"end\">150</text><text class=\"ds-scale\" x=\"31\" y=\"30.0\" text-anchor=\"end\">200</text><text class=\"ds-scale\" x=\"31\" y=\"18\" text-anchor=\"end\">mg</text><text class=\"ds-scale\" x=\"68.0\" y=\"172\" text-anchor=\"middle\">8 AM</text><text class=\"ds-scale\" x=\"132.0\" y=\"172\" text-anchor=\"middle\">12 PM</text><text class=\"ds-scale\" x=\"196.0\" y=\"172\" text-anchor=\"middle\">4 PM</text><text class=\"ds-scale\" x=\"260.0\" y=\"172\" text-anchor=\"middle\">8 PM</text><text class=\"ds-scale\" x=\"324.0\" y=\"172\" text-anchor=\"middle\">12 AM</text><line class=\"ds-rule-target\" x1=\"36\" x2=\"356\" y1=\"131.4\" y2=\"131.4\"/><line class=\"ds-rule-bed\" x1=\"308.0\" x2=\"308.0\" y1=\"26\" y2=\"150\"/><text class=\"ds-annot\" x=\"314.0\" y=\"40\">BED</text><path class=\"ds-band\" d=\"M36.0,150.0L38.0,150.0L40.0,150.0L42.0,150.0L44.0,150.0L46.0,150.0L48.0,150.0L50.0,150.0L52.0,150.0L54.0,143.7L56.0,138.5L58.0,134.2L60.0,130.7L62.0,127.8L64.0,125.4L66.0,123.5L68.0,122.0L70.0,120.8L72.0,119.8L74.0,119.1L76.0,118.5L78.0,118.1L80.0,117.8L82.0,117.7L84.0,117.6L86.0,114.9L88.0,112.7L90.0,110.9L92.0,109.5L94.0,108.5L96.0,107.7L98.0,107.1L100.0,106.7L102.0,106.4L104.0,106.3L106.0,106.3L108.0,106.3L110.0,106.5L112.0,106.7L114.0,106.9L116.0,107.2L118.0,107.6L120.0,107.9L122.0,108.3L124.0,108.7L126.0,109.1L128.0,109.5L130.0,110.0L132.0,110.4L134.0,110.8L136.0,111.3L138.0,111.7L140.0,112.2L142.0,112.6L144.0,113.0L146.0,113.5L148.0,113.9L150.0,114.3L152.0,114.8L154.0,115.2L156.0,115.6L158.0,116.0L160.0,116.4L162.0,116.9L164.0,117.3L166.0,117.7L168.0,118.1L170.0,118.4L172.0,118.8L174.0,119.2L176.0,119.6L178.0,120.0L180.0,120.3L182.0,120.7L184.0,121.1L186.0,121.4L188.0,121.8L190.0,122.1L192.0,122.5L194.0,122.8L196.0,123.1L198.0,123.5L200.0,123.8L202.0,124.1L204.0,124.4L206.0,124.7L208.0,125.0L210.0,125.4L212.0,125.7L214.0,126.0L216.0,126.3L218.0,126.5L220.0,126.8L222.0,127.1L224.0,127.4L226.0,127.7L228.0,128.0L230.0,128.2L232.0,128.5L234.0,128.8L236.0,129.0L238.0,129.3L240.0,129.5L242.0,129.8L244.0,130.0L246.0,130.3L248.0,130.5L250.0,130.8L252.0,131.0L254.0,131.2L256.0,131.5L258.0,131.7L260.0,131.9L262.0,132.1L264.0,132.4L266.0,132.6L268.0,132.8L270.0,133.0L272.0,133.2L274.0,133.4L276.0,133.6L278.0,133.8L280.0,134.0L282.0,134.2L284.0,134.4L286.0,134.6L288.0,134.8L290.0,135.0L292.0,135.2L294.0,135.3L296.0,135.5L298.0,135.7L300.0,135.9L302.0,136.1L304.0,136.2L306.0,136.4L308.0,136.6L310.0,136.7L312.0,136.9L314.0,137.1L316.0,137.2L318.0,137.4L320.0,137.5L322.0,137.7L324.0,137.8L326.0,138.0L328.0,138.1L330.0,138.3L332.0,138.4L334.0,138.6L336.0,138.7L338.0,138.8L340.0,139.0L342.0,139.1L344.0,139.2L346.0,139.4L348.0,139.5L350.0,139.6L352.0,139.8L354.0,139.9L356.0,140.0L356.0,148.2L354.0,148.2L352.0,148.1L350.0,148.1L348.0,148.0L346.0,148.0L344.0,147.9L342.0,147.9L340.0,147.8L338.0,147.8L336.0,147.7L334.0,147.7L332.0,147.6L330.0,147.6L328.0,147.5L326.0,147.4L324.0,147.4L322.0,147.3L320.0,147.2L318.0,147.2L316.0,147.1L314.0,147.0L312.0,146.9L310.0,146.9L308.0,146.8L306.0,146.7L304.0,146.6L302.0,146.5L300.0,146.5L298.0,146.4L296.0,146.3L294.0,146.2L292.0,146.1L290.0,146.0L288.0,145.9L286.0,145.8L284.0,145.7L282.0,145.6L280.0,145.5L278.0,145.3L276.0,145.2L274.0,145.1L272.0,145.0L270.0,144.9L268.0,144.7L266.0,144.6L264.0,144.5L262.0,144.3L260.0,144.2L258.0,144.0L256.0,143.9L254.0,143.7L252.0,143.6L250.0,143.4L248.0,143.2L246.0,143.1L244.0,142.9L242.0,142.7L240.0,142.5L238.0,142.4L236.0,142.2L234.0,142.0L232.0,141.8L230.0,141.6L228.0,141.4L226.0,141.1L224.0,140.9L222.0,140.7L220.0,140.5L218.0,140.2L216.0,140.0L214.0,139.7L212.0,139.5L210.0,139.2L208.0,138.9L206.0,138.6L204.0,138.4L202.0,138.1L200.0,137.8L198.0,137.5L196.0,137.1L194.0,136.8L192.0,136.5L190.0,136.2L188.0,135.8L186.0,135.5L184.0,135.1L182.0,134.7L180.0,134.3L178.0,133.9L176.0,133.5L174.0,133.1L172.0,132.7L170.0,132.3L168.0,131.8L166.0,131.4L164.0,130.9L162.0,130.5L160.0,130.0L158.0,129.5L156.0,129.0L154.0,128.4L152.0,127.9L150.0,127.4L148.0,126.8L146.0,126.2L144.0,125.7L142.0,125.1L140.0,124.5L138.0,123.9L136.0,123.2L134.0,122.6L132.0,122.0L130.0,121.3L128.0,120.7L126.0,120.0L124.0,119.4L122.0,118.7L120.0,118.1L118.0,117.5L116.0,116.9L114.0,116.3L112.0,115.7L110.0,115.2L108.0,114.7L106.0,114.3L104.0,114.0L102.0,113.7L100.0,113.6L98.0,113.7L96.0,113.9L94.0,114.3L92.0,115.0L90.0,116.0L88.0,117.4L86.0,119.3L84.0,121.7L82.0,121.5L80.0,121.4L78.0,121.3L76.0,121.4L74.0,121.6L72.0,122.0L70.0,122.7L68.0,123.6L66.0,124.8L64.0,126.5L62.0,128.6L60.0,131.2L58.0,134.5L56.0,138.7L54.0,143.8L52.0,150.0L50.0,150.0L48.0,150.0L46.0,150.0L44.0,150.0L42.0,150.0L40.0,150.0L38.0,150.0L36.0,150.0Z\"/><path class=\"ds-trace\" d=\"M36.0,150.0L38.0,150.0L40.0,150.0L42.0,150.0L44.0,150.0L46.0,150.0L48.0,150.0L50.0,150.0L52.0,150.0L54.0,143.7L56.0,138.6L58.0,134.4L60.0,130.9L62.0,128.1L64.0,125.9L66.0,124.1L68.0,122.6L70.0,121.5L72.0,120.7L74.0,120.1L76.0,119.7L78.0,119.4L80.0,119.3L82.0,119.3L84.0,119.3L86.0,116.7L88.0,114.7L90.0,113.1L92.0,111.8L94.0,110.9L96.0,110.3\"/><path class=\"ds-trace ds-trace--projected\" d=\"M96.0,110.3L98.0,109.9L100.0,109.6L102.0,109.5L104.0,109.6L106.0,109.7L108.0,109.9L110.0,110.2L112.0,110.6L114.0,111.0L116.0,111.4L118.0,111.9L120.0,112.4L122.0,112.9L124.0,113.4L126.0,114.0L128.0,114.5L130.0,115.0L132.0,115.6L134.0,116.1L136.0,116.7L138.0,117.2L140.0,117.7L142.0,118.3L144.0,118.8L146.0,119.3L148.0,119.8L150.0,120.3L152.0,120.8L154.0,121.3L156.0,121.8L158.0,122.3L160.0,122.8L162.0,123.2L164.0,123.7L166.0,124.1L168.0,124.6L170.0,125.0L172.0,125.4L174.0,125.8L176.0,126.3L178.0,126.7L180.0,127.1L182.0,127.5L184.0,127.8L186.0,128.2L188.0,128.6L190.0,129.0L192.0,129.3L194.0,129.7L196.0,130.0L198.0,130.4L200.0,130.7L202.0,131.0L204.0,131.4L206.0,131.7L208.0,132.0L210.0,132.3L212.0,132.6L214.0,132.9L216.0,133.2L218.0,133.5L220.0,133.8L222.0,134.1L224.0,134.3L226.0,134.6L228.0,134.9L230.0,135.1L232.0,135.4L234.0,135.6L236.0,135.9L238.0,136.1L240.0,136.4L242.0,136.6L244.0,136.8L246.0,137.1L248.0,137.3L250.0,137.5L252.0,137.7L254.0,137.9L256.0,138.1L258.0,138.3L260.0,138.5L262.0,138.7L264.0,138.9L266.0,139.1L268.0,139.3L270.0,139.5L272.0,139.7L274.0,139.8L276.0,140.0L278.0,140.2L280.0,140.4L282.0,140.5L284.0,140.7L286.0,140.8L288.0,141.0L290.0,141.2L292.0,141.3L294.0,141.5L296.0,141.6L298.0,141.7L300.0,141.9L302.0,142.0L304.0,142.2L306.0,142.3L308.0,142.4L310.0,142.6L312.0,142.7L314.0,142.8L316.0,142.9L318.0,143.1L320.0,143.2L322.0,143.3L324.0,143.4L326.0,143.5L328.0,143.6L330.0,143.7L332.0,143.9L334.0,144.0L336.0,144.1L338.0,144.2L340.0,144.3L342.0,144.4L344.0,144.5L346.0,144.6L348.0,144.6L350.0,144.7L352.0,144.8L354.0,144.9L356.0,145.0\"/><circle cx=\"308.0\" cy=\"142.4\" r=\"3.5\" class=\"ds-dot\"/><line class=\"ds-rule-cutoff\" x1=\"101.3\" x2=\"101.3\" y1=\"26\" y2=\"150\"/><rect class=\"ds-flag\" x=\"27.3\" y=\"4\" width=\"148.0\" height=\"20\" rx=\"3\"/><text class=\"ds-flag-text\" x=\"101.3\" y=\"18\" text-anchor=\"middle\">LAST COFFEE 10:05 AM</text><path class=\"ds-event\" d=\"M48.0,161 L52.0,154 L56.0,161 Z\"/><text class=\"ds-event-label\" x=\"58.0\" y=\"162\">64</text><path class=\"ds-event\" d=\"M80.0,161 L84.0,154 L88.0,161 Z\"/><text class=\"ds-event-label\" x=\"90.0\" y=\"162\">28</text><line class=\"ds-carriage\" x1=\"96.0\" x2=\"96.0\" y1=\"26\" y2=\"150\"/><circle class=\"ds-pen-tip\" cx=\"96.0\" cy=\"110.3\" r=\"5\"/><text class=\"ds-annot ds-annot--pen\" x=\"105.0\" y=\"101.3\">≈64 mg now</text></svg></div><figcaption class=\"ds-caption\">Solid: estimated caffeine active so far. Dashed: where it goes if you have nothing else. Shaded: the range for half-lives of 3.5–7.0 h.</figcaption></figure>",
+      "css": ".ds-bezel{margin:0;max-width:420px;background:var(--bezel, #22282a);border-radius:10px;padding:10px;box-shadow:inset 0 1px 0 var(--bezel-edge, #3a4244),0 1px 0 rgb(255 255 255 / 0.4),0 6px 18px rgb(20 30 26 / 0.18);font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);font-variant-numeric:tabular-nums}.ds-plate{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:0 4px 8px;font-family:var(--font-print, 'Barlow Condensed', Barlow, system-ui, sans-serif);font-weight:500;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#9fb0aa}.ds-swatch{display:inline-block;width:14px;height:3px;border-radius:2px;background:var(--pen-caffeine, #b4123e);vertical-align:middle;margin-right:6px}.ds-paper{background:var(--paper, #f6faf4);border-radius:3px;overflow:hidden}.ds-chart{display:block;width:100%;height:auto}.ds-chart text{font-family:var(--font-print, 'Barlow Condensed', Barlow, system-ui, sans-serif);fill:var(--print, #2b6a4c)}.ds-scale{font-size:11px;font-weight:500}.ds-gmin{stroke:var(--grid-minor, rgb(46 125 88 / 0.14));stroke-width:1}.ds-gmaj{stroke:var(--grid-major, rgb(46 125 88 / 0.36));stroke-width:1}.ds-sleep{fill:var(--paper-night, #e7efe8)}.ds-band{fill:var(--pen-caffeine-band, rgb(180 18 62 / 0.075))}.ds-trace{fill:none;stroke:var(--pen-caffeine, #b4123e);stroke-width:2.25;stroke-linejoin:round;stroke-linecap:round}.ds-trace--projected{stroke-width:1.75;stroke-dasharray:5 4}.ds-rule-target{stroke:var(--print, #2b6a4c);stroke-width:1.25;stroke-dasharray:8 3 2 3}.ds-rule-bed{stroke:var(--print, #2b6a4c);stroke-width:1.25}.ds-rule-cutoff{stroke:var(--ink, #1b2220);stroke-width:1.25;stroke-dasharray:3 3}.ds-carriage{stroke:var(--ink, #1b2220);stroke-width:1;opacity:0.55}.ds-pen-tip{fill:var(--pen-caffeine, #b4123e);stroke:var(--paper, #f6faf4);stroke-width:2}.ds-dot{fill:var(--pen-caffeine, #b4123e)}.ds-flag{fill:var(--ink, #1b2220)}.ds-chart .ds-flag-text{fill:var(--paper, #f6faf4);font-size:11.5px;font-weight:600;letter-spacing:0.04em}.ds-annot{font-size:12.5px;font-weight:600}.ds-chart .ds-annot--pen{fill:var(--pen-caffeine, #b4123e)}.ds-event{fill:var(--pen-caffeine, #b4123e)}.ds-chart .ds-event-label{font-size:10.5px;font-weight:600;fill:var(--pen-caffeine, #b4123e)}.ds-caption{margin:0;padding:8px 4px 0;font-size:0.75rem;line-height:1.45;color:#9fb0aa}"
+    },
+    {
+      "name": "Event Key",
+      "kind": "button",
+      "refersTo": "event-key",
+      "description": "Signature hardware keycap under the chart. Tap arms a drink (pressed, pen ring); a second tap logs it.",
+      "html": "<div class=\"ds-keys\"><button class=\"ds-key\" type=\"button\"><span class=\"ds-key__name\">Drip coffee</span><span class=\"ds-key__mg\">95 mg</span></button><button class=\"ds-key\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-key__name\">Espresso</span><span class=\"ds-key__mg\">64 mg</span></button><button class=\"ds-key ds-key--other\" type=\"button\"><span class=\"ds-key__name\">Other drink</span><span class=\"ds-key__mg\">All drinks</span></button></div>",
+      "css": ".ds-keys{display:grid;grid-template-columns:repeat(3,minmax(0,132px));gap:12px;font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);font-variant-numeric:tabular-nums}.ds-key{appearance:none;border:1px solid var(--key-edge, #9ea8a4);border-radius:6px;background:linear-gradient(to bottom,var(--key-top, #ffffff),var(--key, #f1f4f2));box-shadow:var(--key-shadow, 0 2px 0 #8f9995, 0 3px 6px rgb(20 30 26 / 0.18));padding:12px 12px 10px;min-height:72px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;gap:4px;color:var(--ink, #1b2220);font:inherit;transition:transform 120ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),box-shadow 120ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)),border-color 120ms}.ds-key:hover{border-color:var(--ink-3, #525d59)}.ds-key:active,.ds-key[aria-pressed='true']{transform:translateY(2px);box-shadow:var(--key-shadow-pressed, 0 0 0 #8f9995, 0 1px 2px rgb(20 30 26 / 0.2))}.ds-key[aria-pressed='true']{border-color:var(--pen-caffeine, #b4123e);box-shadow:var(--key-shadow-pressed, 0 0 0 #8f9995, 0 1px 2px rgb(20 30 26 / 0.2)),inset 0 0 0 1px var(--pen-caffeine, #b4123e)}.ds-key:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}.ds-key__name{font-weight:600;font-size:0.875rem;line-height:1.2}.ds-key__mg{font-family:var(--font-print, 'Barlow Condensed', Barlow, system-ui, sans-serif);font-size:1rem;font-weight:600;color:var(--pen-caffeine, #b4123e)}.ds-key--other .ds-key__mg{color:var(--ink-2, #47524f)}"
+    },
+    {
+      "name": "Commit Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pen-filled button that commits a caffeine entry, labelled in On-Fill (white by day, graphite at night).",
+      "html": "<button class=\"ds-btn ds-btn--primary\" type=\"submit\">Log 95 mg</button>",
+      "css": ".ds-btn{appearance:none;height:40px;padding:0 16px;border-radius:4px;border:1px solid var(--key-edge, #9ea8a4);background:var(--key, #f1f4f2);color:var(--ink, #1b2220);font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);font-weight:600;font-size:0.875rem;cursor:pointer;white-space:nowrap;transition:background-color 120ms,border-color 120ms}.ds-btn:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}.ds-btn--primary{background:var(--pen-caffeine, #b4123e);border-color:var(--pen-caffeine, #b4123e);color:var(--on-fill, #ffffff)}.ds-btn--primary:hover{background:color-mix(in oklab,var(--pen-caffeine, #b4123e) 88%,black);border-color:color-mix(in oklab,var(--pen-caffeine, #b4123e) 88%,black)}.ds-btn:disabled{opacity:0.5;cursor:not-allowed}"
+    },
+    {
+      "name": "Panel Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Default button: a keycap-faced panel switch for secondary commands (Got it, Save as a usual, Export backup).",
+      "html": "<button class=\"ds-btn\" type=\"button\">Export backup (.json)</button>",
+      "css": ".ds-btn{appearance:none;height:40px;padding:0 16px;border-radius:4px;border:1px solid var(--key-edge, #9ea8a4);background:var(--key, #f1f4f2);color:var(--ink, #1b2220);font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);font-weight:600;font-size:0.875rem;cursor:pointer;white-space:nowrap;transition:background-color 120ms,border-color 120ms}.ds-btn:hover{border-color:var(--ink-3, #525d59);background:var(--key-top, #ffffff)}.ds-btn:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Transparent row action (Again, Edit, Delete) and Cancel; the danger variant is Ink 2 at rest and Danger Red on hover.",
+      "html": "<div class=\"ds-row\"><button class=\"ds-btn ds-btn--quiet ds-btn--sm\" type=\"button\">Again</button><button class=\"ds-btn ds-btn--quiet ds-btn--sm\" type=\"button\">Edit</button><button class=\"ds-btn ds-btn--quiet ds-btn--sm ds-btn--danger\" type=\"button\">Delete</button></div>",
+      "css": ".ds-row{display:flex;gap:4px}.ds-btn{appearance:none;height:40px;padding:0 16px;border-radius:4px;border:1px solid transparent;background:transparent;color:var(--ink-2, #47524f);font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);font-weight:600;font-size:0.875rem;cursor:pointer;white-space:nowrap;transition:background-color 120ms,border-color 120ms}.ds-btn--quiet:hover{background:var(--housing-sunk, #c5ccc9)}.ds-btn--sm{height:32px;padding:0 12px}.ds-btn--danger{color:var(--ink-2, #47524f)}.ds-btn--danger:hover{color:var(--danger, #a3122f)}.ds-btn:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}"
+    },
+    {
+      "name": "Paper Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Text field as a paper slip set into the housing: Chart Paper fill, keycap-edge border, label above.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Caffeine per serving</span><span class=\"ds-field__row\"><input class=\"ds-input\" inputmode=\"numeric\" value=\"95\"> mg</span></label>",
+      "css": ".ds-field{display:grid;gap:4px;font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);color:var(--ink, #1b2220);font-variant-numeric:tabular-nums}.ds-field__label{font-size:0.875rem;font-weight:600;color:var(--ink-2, #47524f)}.ds-field__row{display:flex;align-items:center;gap:6px}.ds-input{height:40px;width:96px;padding:0 12px;border-radius:4px;border:1px solid var(--key-edge, #9ea8a4);background:var(--paper, #f6faf4);color:var(--ink, #1b2220);font:inherit}.ds-input:hover{border-color:var(--ink-3, #525d59)}.ds-input:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}.ds-input[aria-invalid='true']{border-color:var(--danger, #a3122f)}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "chip",
+      "refersTo": "segmented-option",
+      "description": "One bordered paper strip of radio options (Servings, When); the selected option fills with Ink.",
+      "html": "<fieldset class=\"ds-fieldset\"><legend>Servings</legend><div class=\"ds-segmented\"><label><input type=\"radio\" name=\"ds-portion\">½</label><label><input type=\"radio\" name=\"ds-portion\" checked>1</label><label><input type=\"radio\" name=\"ds-portion\">1½</label><label><input type=\"radio\" name=\"ds-portion\">2</label></div></fieldset>",
+      "css": ".ds-fieldset{border:0;margin:0;padding:0;display:grid;gap:4px;font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);color:var(--ink, #1b2220)}.ds-fieldset>legend{font-size:0.875rem;font-weight:600;color:var(--ink-2, #47524f);padding:0;margin-bottom:4px}.ds-segmented{display:inline-flex;flex-wrap:wrap;border:1px solid var(--key-edge, #9ea8a4);border-radius:4px;overflow:hidden;background:var(--paper, #f6faf4)}.ds-segmented label{position:relative;display:inline-flex;align-items:center;height:38px;padding:0 12px;font-size:0.875rem;cursor:pointer;border-right:1px solid var(--key-edge, #9ea8a4)}.ds-segmented label:last-child{border-right:0}.ds-segmented input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}.ds-segmented label:has(input:checked){background:var(--ink, #1b2220);color:var(--paper, #f6faf4);font-weight:600}.ds-segmented label:has(input:focus-visible){outline:2px solid var(--focus, #1663c7);outline-offset:-2px}"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "navlink",
+      "description": "Wordmark (working title), date, storage lamp and nav links; the current page is pressed into Sunk Housing.",
+      "html": "<header class=\"ds-topbar\"><a class=\"ds-wordmark\" href=\"#\">Caffeine Recorder</a><span class=\"ds-date\">Friday, October 2</span><span class=\"ds-spacer\"></span><span class=\"ds-lamp\">On this device only</span><nav class=\"ds-nav\" aria-label=\"Main\"><a class=\"ds-navlink\" href=\"#\" aria-current=\"page\">Today</a><a class=\"ds-navlink\" href=\"#\">Calibrate</a></nav></header>",
+      "css": ".ds-topbar{display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--housing, #d3d9d6);font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);color:var(--ink, #1b2220)}.ds-wordmark{font-family:var(--font-print, 'Barlow Condensed', Barlow, system-ui, sans-serif);font-weight:600;font-size:1.2rem;letter-spacing:0.01em;color:var(--ink, #1b2220);text-decoration:none}.ds-date{font-size:0.875rem;color:var(--ink-2, #47524f)}.ds-spacer{flex:1}.ds-lamp{display:inline-flex;align-items:center;gap:8px;font-size:0.875rem;color:var(--ink-2, #47524f)}.ds-lamp::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--lamp-ok, #23a861);box-shadow:0 0 0 2px rgb(0 0 0 / 0.08),0 0 6px var(--lamp-ok, #23a861)}.ds-nav{display:flex;gap:4px}.ds-navlink{font-size:0.875rem;font-weight:600;color:var(--ink, #1b2220);text-decoration:none;padding:8px 12px;border-radius:4px}.ds-navlink:hover{background:var(--housing-raised, #dfe4e1)}.ds-navlink[aria-current='page']{background:var(--housing-sunk, #c5ccc9)}.ds-navlink:focus-visible{outline:2px solid var(--focus, #1663c7);outline-offset:2px}"
+    },
+    {
+      "name": "Readout Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat Raised Housing panel split into channels by seams; each value is stated in words, warnings carry words and an amber lamp dot as well as Alarm Amber.",
+      "html": "<section class=\"ds-readout\" aria-label=\"Readings\"><div class=\"ds-channel\"><p class=\"ds-channel__label\">Active now</p><p class=\"ds-channel__value\">≈64<span class=\"ds-unit\">mg</span></p><p class=\"ds-channel__note\">Likely 58–68 mg; metabolism varies.</p></div><div class=\"ds-channel\"><p class=\"ds-channel__label\">At bedtime, 11:00 PM</p><p class=\"ds-channel__value\">≈12 → 35<span class=\"ds-unit\">mg</span></p><p class=\"ds-channel__note ds-channel__note--warn\">Over your 30 mg target.</p></div></section>",
+      "css": ".ds-readout{max-width:300px;background:var(--housing-raised, #dfe4e1);border:1px solid var(--seam, #aab3af);border-radius:6px;font-family:var(--font-ui, Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif);color:var(--ink, #1b2220);font-variant-numeric:tabular-nums}.ds-channel{padding:16px;border-bottom:1px solid var(--seam, #aab3af)}.ds-channel:last-child{border-bottom:0}.ds-channel__label{margin:0 0 4px;font-size:0.875rem;color:var(--ink-2, #47524f)}.ds-channel__value{margin:0;font-size:1.44rem;font-weight:600;line-height:1.15;letter-spacing:-0.01em}.ds-unit{font-size:1rem;font-weight:500;color:var(--ink-2, #47524f);margin-left:2px}.ds-channel__note{margin:4px 0 0;font-size:0.875rem;color:var(--ink-2, #47524f)}.ds-channel__note--warn{color:var(--danger, #a3122f);font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lab Strip-Chart Recorder",
+    "overview": "The interface is one bench instrument. An instrument-grey enamel housing carries a dark bezel; the bezel frames green-ruled chart paper; one crimson pen writes the caffeine active in the body from the start of the day to past bedtime, solid up to the pen carriage at \"now\" and dashed for the projection beyond it. The chart is the dashboard. Every other surface is a part of the same machine: the readout panel states in words what the paper shows, the event keys feed the pen, and the log and the 14-day archive file the paper away.\n\nDensity is instrument density: compact, labelled, tabular. Two type voices divide the work. Barlow Condensed is what the instrument prints (scales, annotations, the bezel plate, mg figures); Barlow is what the operator reads and presses. Color is held to the housing greys, the paper's printed green and pen ink, and pen ink is data, never decoration. Depth is physical and scarce: the paper sits recessed in its bezel, the keys travel when pressed, and almost nothing else casts a shadow.\n\nThe dark theme is the night chart: housing and paper go to graphite, the printed green lightens, and the pen turns luminous. Both themes are first-class and every color token is declared twice. The direction was chosen against three things, and the build keeps all three out: the stat-card grid, the progress ring, and the coffee-brown cozy café app.",
+    "keyCharacteristics": [
+      "A full-width strip chart is the first and largest thing on the dashboard.",
+      "One pen color per metric; caffeine is pen 1.",
+      "Solid past, dashed projection, a faint uncertainty band, and a pencil-grey ghost for a drink not yet logged.",
+      "Hardware keycaps with 2px of travel for logging.",
+      "Condensed printed type on the paper, plain Barlow on the housing, tabular figures everywhere.",
+      "Flat housing panels separated by 1px seams; shadows only on physical objects.",
+      "A day chart and a night chart, token for token."
+    ],
+    "rules": [
+      {
+        "name": "The One Pen Per Metric Rule",
+        "body": "Every metric owns exactly one pen: a `--pen-<metric>` ink and a `--pen-<metric>-band` fill, each declared in `:root` and again in the dark block, and named in that metric's `MetricDefinition.pen`. Caffeine is pen 1 (`--pen-caffeine`). A new pen arrives with both theme values and its band (its own hue at low alpha, as pen 1 uses 7.5% day and 10% night), clears 4.5:1 on Chart Paper and Sleep Paper in both themes, and does not share a hue with an existing pen, Alarm Amber, Danger Red, Chart-Paper Green, Pencil or Focus Blue. No pen beyond pen 1 has a color yet. In the shipped build the chart and stylesheet name `--pen-caffeine` directly; the registry's `pen` field is declared but not yet read by the chart.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Is the Metric Rule",
+        "body": "Pen ink appears only where its metric is: that metric's trace, markers and figures, and the controls that commit or calibrate that metric. It is never used for navigation, headings, panels, focus or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Alarm Is Not Ink Rule",
+        "body": "A warning is never drawn in a pen's ink: it is Alarm Amber, like an annunciator lamp, and it is always also a word (\"Over your target\", \"Above the reference\"), an amber lamp dot, or an underline explained by a legend. Danger Red is reserved for controls that destroy and for errors.",
+        "section": "colors"
+      },
+      {
+        "name": "The Housing Text Floor Rule",
+        "body": "Text on the housing is Ink 3 or darker. Ink 3 measures 4.8:1 on day housing and 5.3:1 on raised housing; nothing lighter carries text. Labels on fills use On-Fill, never a fixed white, so the night chart keeps contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Printed Scale Rule",
+        "body": "Barlow Condensed is for what the instrument prints: scales, annotations, plates, flags and mg figures. Barlow is for what the operator reads and presses. Paragraphs, labels and buttons are never condensed; chart scales are never set in regular width.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "`font-variant-numeric: tabular-nums` is set on the body and inherited everywhere, so readouts and figures hold their width as values update every 30 seconds.",
+        "section": "typography"
+      },
+      {
+        "name": "The 600 Ceiling Rule",
+        "body": "The shipped faces stop at 600 and nothing is set heavier. Emphasis is a step to 600 or a step in ink, never a heavier weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Chart Comes First Rule",
+        "body": "On the dashboard the strip chart is the first content and the widest object at every breakpoint. Only the top bar and the one-time estimates notice sit above it. The readout sits beside it above 900px and beneath it below, and the event keys come directly after. New metrics join as pens on this recorder.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hardware Depth Rule",
+        "body": "Only objects that physically stand proud of the housing cast shadows: the bezel, the keycaps, the snackbar. Panels (readout, composer, picker, notice) are flat: Raised Housing with a 1px Seam. A shadow on a panel is wrong.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Radius Ladder Rule",
+        "body": "3, 4, 6, 10px, by how much of the machine the shape is: paper, control, panel or key, frame. Nothing is pill-shaped and nothing but a true circle goes past 10px.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Line Grammar Rule",
+        "body": "Every mark on the paper can be told apart by weight and dash, not by color alone (pen 1 and Chart-Paper Green sit at 1.06:1 in luminance on the day chart): the trace 2.25px solid with round joins; the projection 1.75px dashed 5/4; the ghost 1.75px dotted 2/4 with round caps in Pencil; the bedtime target 1.25px dash-dot 8/3/2/3 in Chart-Paper Green; bedtime 1.25px solid in Chart-Paper Green; the last-cup cutoff 1.25px dashed 3/3 in Ink; the carriage and cursor 1px. A new pen inherits the trace grammar (solid past, dashed projection, band) in its own ink; how a second pen is told apart from the first beyond hue is not yet established.",
+        "section": "components"
+      },
+      {
+        "name": "The Stated Twice Rule",
+        "body": "Every number the paper draws is also stated in words: in the readout, and in the chart's accessible label and caption. A new mark on the chart ships with its sentence.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do open every dashboard view on the strip chart at full width, with the readout to its right above 900px and beneath it below.",
+      "Do add a metric as a new pen: `--pen-<metric>` and `--pen-<metric>-band` in both `:root` and the dark block, named in `MetricDefinition.pen`, checked at 4.5:1 on Chart Paper and Sleep Paper in both themes.",
+      "Do draw every pen with one grammar: 2.25px solid up to the carriage, 1.75px dashed 5/4 after it, its band behind, and Pencil dotted 2/4 for a drink not yet logged.",
+      "Do set printed things (scales, annotations, plates, flags, mg figures) in Barlow Condensed and everything read or operated in Barlow, with tabular figures throughout.",
+      "Do separate housing panels with Raised Housing and a 1px Seam, and keep shadows for the bezel, the keycaps and the snackbar.",
+      "Do keep spacing on the 4px steps (4, 8, 12, 16, 24, 32, 48) and radii on the 3/4/6/10px ladder.",
+      "Do give every warning a word, a lamp dot or an underline as well as Alarm Amber.",
+      "Do declare every color for both the day chart and the night chart, and keep the bezel dark in both.",
+      "Do gate motion behind `prefers-reduced-motion: no-preference`: the 700ms replot wipe and the 220ms snackbar rise, with key travel at 120ms."
+    ],
+    "donts": [
+      "Don't build stat-card grids, progress rings or radial gauges; a total is a needle on a ruled linear scale.",
+      "Don't reach for coffee browns, cream or café warmth; the housing is cool instrument grey and the paper is green-ruled.",
+      "Don't use pen ink for navigation, headings, panels, focus or decoration, and don't draw a metric's data in any ink but its own pen.",
+      "Don't give a new pen a hue near pen 1 crimson, Alarm Amber, Danger Red, Chart-Paper Green, Pencil grey or Focus Blue.",
+      "Don't set text on the housing lighter than Ink 3, or draw a warning in pen ink.",
+      "Don't hard-code a white label on a fill; use On-Fill so the night chart keeps contrast.",
+      "Don't set anything heavier than 600, and don't condense running text.",
+      "Don't put shadows on panels or round anything past 10px.",
+      "Don't animate on page load; motion marks a change the user just made."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<!--
+  THESIS: The chart is the dashboard. A one-pen strip-chart recorder plots the caffeine active in your body across the day; it refuses the stat-card grid, the progress ring, and the coffee-brown cozy app.
+  OWN-WORLD: Instrument-grey enamel housing; a dark bezel framing green-ruled chart paper; crimson caffeine ink with dashed projection and a faint uncertainty band; event-marker keys as hardware keycaps; Barlow and Barlow Condensed as printed scale type. Night chart: graphite paper, luminous ink.
+  STORY: See what is active now, where tonight lands against your bedtime target, and the last time a usual cup still fits. Log a drink in two taps; the pen re-plots the rest of the day.
+  FIRST VIEWPORT: Full-width chart, day start to after bedtime, pen at now, last-cup and bedtime ruled on the paper; readout panel right (desktop) or below (mobile); event keys directly beneath.
+  FORM: Lab strip-chart recorder, candidate 4 of 7; staging: continuous trace; seed 0d34e14e.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#d3d9d6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141918" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Track caffeine as a dose over time: what's active now, what's left at bedtime, and when to have your last cup." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Caffeine" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <title>Caffeine Recorder</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This app needs JavaScript to keep your caffeine log in this browser.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Full-bleed square for iOS / maskable Android icons: the OS applies its own rounding.
+       Content stays inside the central 80% safe zone. -->
+  <rect width="512" height="512" fill="#22282a"/>
+  <rect x="96" y="96" width="320" height="320" rx="14" fill="#f6faf4"/>
+  <g stroke="#2e7d58" stroke-opacity=".32" stroke-width="3">
+    <path d="M96 176h320M96 256h320M96 336h320M176 96v320M256 96v320M336 96v320"/>
+  </g>
+  <path d="M110 368 C140 368 146 190 178 190 S244 292 282 312 S356 344 402 350" fill="none" stroke="#b4123e" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="282" cy="312" r="20" fill="#b4123e" stroke="#f6faf4" stroke-width="6"/>
+</svg>
