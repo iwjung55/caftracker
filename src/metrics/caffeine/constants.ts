@@ -18,9 +18,6 @@ export const HALF_LIFE_BAND = { low: 0.6, high: 1.4 } as const;
 /** Daily reference for healthy, non-pregnant adults, mg (FDA; EFSA 2015). */
 export const DEFAULT_DAILY_LIMIT_MG = 400;
 
-/** Single-dose reference for healthy adults, mg (EFSA 2015, ≈3 mg/kg). */
-export const SINGLE_DOSE_REFERENCE_MG = 200;
-
 /**
  * Default "still active at bedtime" target, mg. There is no validated
  * threshold. 30 mg at a 5 h half-life reproduces Gardiner et al. 2023's

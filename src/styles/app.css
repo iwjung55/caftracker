@@ -26,6 +26,8 @@
 
   --pen-caffeine: #b4123e;
   --pen-caffeine-band: rgb(180 18 62 / 0.075);
+  /* Your focus range, printed on the paper in the chart's own green. */
+  --focus-band: rgb(46 125 88 / 0.09);
   /* Label color on a filled pen or danger surface. */
   --on-fill: #ffffff;
   --bezel-highlight: rgb(255 255 255 / 0.4);
@@ -88,6 +90,7 @@
 
     --pen-caffeine: #ff5a7e;
     --pen-caffeine-band: rgb(255 90 126 / 0.1);
+    --focus-band: rgb(110 205 160 / 0.08);
     --on-fill: #0d1311;
     --bezel-highlight: rgb(255 255 255 / 0.04);
     --pencil: #9aa5a1;
@@ -401,13 +404,6 @@ select {
   fill: var(--pen-caffeine-band);
 }
 
-.chart .ghost {
-  fill: none;
-  stroke: var(--pencil);
-  stroke-width: 1.75;
-  stroke-dasharray: 2 4;
-  stroke-linecap: round;
-}
 
 .chart .rule-target {
   stroke: var(--print);
@@ -420,11 +416,6 @@ select {
   stroke-width: 1.25;
 }
 
-.chart .rule-cutoff {
-  stroke: var(--ink);
-  stroke-width: 1.25;
-  stroke-dasharray: 3 3;
-}
 
 .chart .carriage {
   stroke: var(--ink);
@@ -438,26 +429,9 @@ select {
   stroke-width: 2;
 }
 
-.chart .flag {
-  fill: var(--ink);
-}
 
-.chart .flag-text {
-  fill: var(--paper);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
 
-.chart .flag--passed {
-  fill: var(--paper);
-  stroke: var(--ink-3);
-  stroke-width: 1;
-}
 
-.chart .flag-text--passed {
-  fill: var(--ink-2);
-}
 
 .chart .annot,
 .chart .event-label {
@@ -480,9 +454,6 @@ select {
   fill: var(--ink);
 }
 
-.chart .annot--pencil {
-  fill: var(--pencil);
-}
 
 .chart .event {
   fill: var(--pen-caffeine);
@@ -637,13 +608,6 @@ select {
   fill: var(--ink-2);
 }
 
-/* ─── Event keys + composer ─────────────────────────────────────────── */
-
-.deck {
-  margin-top: var(--space-5);
-}
-
-.deck__head,
 .section-head {
   display: flex;
   flex-wrap: wrap;
@@ -665,153 +629,10 @@ select {
   color: var(--ink-2);
 }
 
-.keys {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: var(--space-3);
-  padding: var(--space-3);
-  background: var(--housing-sunk);
-  border-radius: 8px;
-  box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.14), inset 0 0 0 1px rgb(0 0 0 / 0.06);
-}
-
-.key {
-  position: relative;
-  appearance: none;
-  border: 1px solid var(--key-edge);
-  border-radius: var(--radius);
-  background: linear-gradient(to bottom, var(--key-top), var(--key));
-  box-shadow: var(--key-shadow);
-  padding: var(--space-3) var(--space-3) 10px;
-  min-height: 72px;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-1);
-  transition: transform 120ms var(--ease-out), box-shadow 120ms var(--ease-out), border-color 120ms;
-}
-
-.key:hover {
-  border-color: var(--ink-3);
-}
-
-.key:active,
-.key[aria-pressed='true'] {
-  transform: translateY(2px);
-  box-shadow: var(--key-shadow-pressed);
-}
-
-.key[aria-pressed='true'] {
-  border-color: var(--pen-caffeine);
-  box-shadow: var(--key-shadow-pressed), inset 0 0 0 1px var(--pen-caffeine);
-}
-
-.key__name {
-  font-weight: 600;
-  font-size: var(--text-sm);
-  line-height: 1.2;
-  padding-right: 14px;
-}
-
-/* Printed key legend (1–9), like a keyboard's number row. Only where a keyboard is likely. */
-.key__legend {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  font-family: var(--font-print);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  color: var(--ink-3);
-  display: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .key__legend {
-    display: block;
-  }
-}
-
-.hint--pointer {
-  display: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .hint--touch {
-    display: none;
-  }
-
-  .hint--pointer {
-    display: inline;
-  }
-}
-
-/* The consequence of the drink being considered, right under the keys.
-   Always a live region; drawn only where the readout isn't beside the chart. */
-.decision {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
-.key__mg {
-  font-family: var(--font-print);
-  font-size: var(--text-md);
-  font-weight: 600;
-  color: var(--pen-caffeine);
-}
-
-.key--other .key__mg {
-  color: var(--ink-2);
-}
-
-.composer {
-  margin-top: var(--space-3);
-  padding: var(--space-4);
-  background: var(--housing-raised);
-  border: 1px solid var(--seam);
-  border-radius: var(--radius);
-  display: grid;
-  gap: var(--space-4);
-}
-
-.composer__row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  gap: var(--space-4);
-}
-
-.composer__summary {
-  margin: 0;
-  font-size: var(--text-sm);
-  color: var(--ink-2);
-  flex: 1 1 260px;
-}
-
-.composer__row--summary {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.composer__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
 .field__inline {
   display: flex;
   align-items: center;
   gap: 6px;
-}
-
-.composer__summary strong {
-  color: var(--ink);
 }
 
 .field {
@@ -859,47 +680,6 @@ select {
   padding: 0;
   display: grid;
   gap: var(--space-1);
-}
-
-.segmented {
-  display: inline-grid;
-  grid-auto-flow: column;
-  gap: 1px;
-  border: 1px solid var(--key-edge);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: var(--key-edge);
-}
-
-.segmented label {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px;
-  padding: 0 var(--space-3);
-  font-size: var(--text-sm);
-  cursor: pointer;
-  background: var(--paper);
-  white-space: nowrap;
-}
-
-.segmented input {
-  position: absolute;
-  opacity: 0;
-  inset: 0;
-  cursor: pointer;
-}
-
-.segmented label:has(input:checked) {
-  background: var(--ink);
-  color: var(--paper);
-  font-weight: 600;
-}
-
-.segmented label:has(input:focus-visible) {
-  outline: 2px solid var(--focus);
-  outline-offset: -2px;
 }
 
 .btn {
@@ -968,73 +748,6 @@ select {
   color: var(--danger);
   font-size: var(--text-sm);
   font-weight: 600;
-}
-
-/* Drink picker (all drinks) */
-
-.picker {
-  margin-top: var(--space-3);
-  padding: var(--space-4);
-  background: var(--housing-raised);
-  border: 1px solid var(--seam);
-  border-radius: var(--radius);
-}
-
-.picker__search .input {
-  width: min(360px, 100%);
-}
-
-.picker__custom {
-  margin-top: var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--seam);
-}
-
-.picker__groups {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--space-4) var(--space-5);
-  margin-top: var(--space-4);
-}
-
-.picker__group h3 {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--ink-2);
-}
-
-.picker__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.picker__item {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0 var(--space-3);
-  text-align: left;
-  padding: var(--space-2);
-  border: 0;
-  background: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-
-.picker__item:hover {
-  background: var(--housing-sunk);
-}
-
-.picker__item small {
-  grid-column: 1 / -1;
-  color: var(--ink-3);
-  font-size: var(--text-xs);
-}
-
-.picker__item b {
-  font-family: var(--font-print);
-  color: var(--pen-caffeine);
 }
 
 /* ─── Lower deck: log + archive ─────────────────────────────────────── */
@@ -1393,13 +1106,9 @@ input[type='range'] {
   margin: 0 0 var(--space-3);
 }
 
-
 /* ─── Responsive ────────────────────────────────────────────────────── */
 
 @media (max-width: 1080px) {
-  .keys {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 
   .calibrate {
     grid-template-columns: minmax(0, 1fr);
@@ -1418,35 +1127,6 @@ input[type='range'] {
 @media (max-width: 900px) {
   .recorder {
     grid-template-columns: 1fr;
-  }
-
-  .decision--on {
-    position: static;
-    width: auto;
-    height: auto;
-    overflow: visible;
-    clip: auto;
-    white-space: normal;
-    margin: var(--space-3) 0 0;
-    padding: var(--space-2) var(--space-3);
-    background: var(--housing-raised);
-    border: 1px solid var(--seam);
-    border-radius: var(--radius-sm);
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .decision--over::before {
-    content: '';
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin-right: 6px;
-    border-radius: 50%;
-    background: var(--lamp-warn);
-    box-shadow: 0 0 0 2px rgb(0 0 0 / 0.08), 0 0 6px var(--lamp-warn);
-    vertical-align: 1px;
   }
 
   .paper {
@@ -1500,10 +1180,6 @@ input[type='range'] {
     display: inline;
   }
 
-  .segmented .ago {
-    display: none;
-  }
-
   /* Logging happens on the phone: keys directly under the chart, readings after. */
   .dashboard {
     display: flex;
@@ -1518,22 +1194,13 @@ input[type='range'] {
     order: 1;
   }
 
-  .dashboard .deck {
+  .dashboard .readout {
     order: 2;
     margin-top: var(--space-4);
   }
 
-  .dashboard .readout {
-    order: 3;
-    margin-top: var(--space-5);
-  }
-
   .dashboard .lower {
     order: 4;
-  }
-
-  .deck__head .section-hint {
-    width: 100%;
   }
 
   .bezel {
@@ -1551,24 +1218,6 @@ input[type='range'] {
 
   .channel__value {
     font-size: var(--text-lg);
-  }
-
-  .keys {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-2);
-    padding: var(--space-2);
-  }
-
-  .key {
-    min-height: 64px;
-    padding: var(--space-2) var(--space-2) var(--space-2);
-  }
-
-  .key--other {
-    grid-column: 1 / -1;
-    min-height: 44px;
-    flex-direction: row;
-    align-items: center;
   }
 
   .notice {
@@ -1621,5 +1270,412 @@ input[type='range'] {
 
   .log__actions .btn--danger {
     margin-left: var(--space-2);
+  }
+}
+
+/* ─── Suggestion ────────────────────────────────────────────────────── */
+
+.suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-4);
+  padding: var(--space-5);
+  background: var(--housing-raised);
+  border: 1px solid var(--seam);
+  border-radius: var(--radius);
+}
+
+.suggestion__body {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.suggestion__kicker {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.suggestion__source {
+  font-weight: 400;
+}
+
+/* The lamp in front of the kicker says go / wait / stop at a glance. */
+.suggestion__kicker::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--seam);
+  vertical-align: 1px;
+}
+
+.suggestion[data-tone='go'] .suggestion__kicker::before {
+  background: var(--lamp-ok);
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 0.08), 0 0 6px var(--lamp-ok);
+}
+
+.suggestion[data-tone='stop'] .suggestion__kicker::before {
+  background: var(--lamp-warn);
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 0.08), 0 0 6px var(--lamp-warn);
+}
+
+.suggestion__title {
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.suggestion__detail {
+  margin: var(--space-2) 0 0;
+  max-width: 60ch;
+  color: var(--ink-2);
+}
+
+.suggestion__hint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.suggestion__hint a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+
+.suggestion__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* A keycap-style secondary button (one tap logs the suggested drink). */
+.btn--key {
+  height: 52px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius);
+  background: linear-gradient(to bottom, var(--key-top), var(--key));
+  box-shadow: var(--key-shadow);
+  font-size: var(--text-md);
+  transition: transform 120ms var(--ease-out), box-shadow 120ms var(--ease-out), border-color 120ms;
+}
+
+.btn--key:active {
+  transform: translateY(2px);
+  box-shadow: var(--key-shadow-pressed);
+}
+
+/* ─── The one button ────────────────────────────────────────────────── */
+
+.add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 52px;
+  padding: 0 var(--space-6);
+  border: 1px solid color-mix(in oklab, var(--pen-caffeine) 80%, black);
+  border-radius: var(--radius);
+  background: var(--pen-caffeine);
+  color: var(--on-fill);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 0 color-mix(in oklab, var(--pen-caffeine) 62%, black), 0 3px 8px rgb(20 30 26 / 0.22);
+  transition: transform 120ms var(--ease-out), box-shadow 120ms var(--ease-out), background-color 120ms;
+}
+
+.add-button span {
+  font-size: 1.4em;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.add-button:hover {
+  background: color-mix(in oklab, var(--pen-caffeine) 90%, black);
+}
+
+.add-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 color-mix(in oklab, var(--pen-caffeine) 62%, black), 0 1px 2px rgb(20 30 26 / 0.2);
+}
+
+.add-bar {
+  display: none;
+}
+
+/* ─── Add-drink sheet ───────────────────────────────────────────────── */
+
+.sheet {
+  width: min(640px, calc(100vw - 32px));
+  max-height: min(82vh, 780px);
+  padding: 0;
+  border: 1px solid var(--seam);
+  border-radius: 10px;
+  background: var(--housing-raised);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 0.3);
+  overflow: hidden;
+}
+
+.sheet::backdrop {
+  background: rgb(10 14 13 / 0.48);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sheet[open] {
+    animation: sheet-in 220ms var(--ease-out);
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+.sheet__inner {
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+}
+
+.sheet__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-4) var(--space-2) var(--space-5);
+}
+
+.sheet__title {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.sheet__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0 var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--seam);
+}
+
+.sheet__search {
+  flex: 1 1 220px;
+}
+
+.sheet__search .input {
+  width: 100%;
+}
+
+.sheet__body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.sheet__empty {
+  margin: var(--space-5) 0;
+  color: var(--ink-2);
+}
+
+.drink-group h3 {
+  margin: var(--space-5) 0 var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.drink-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--seam);
+}
+
+.drink-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'name mg'
+    'serving tag';
+  gap: 2px var(--space-3);
+  min-height: 56px;
+  padding: var(--space-2) var(--space-2);
+  border: 0;
+  border-bottom: 1px solid var(--seam);
+  background: none;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.drink-row:hover {
+  background: var(--housing-sunk);
+}
+
+.drink-row__name {
+  grid-area: name;
+  font-weight: 600;
+}
+
+.drink-row__mg {
+  grid-area: mg;
+  text-align: right;
+  font-family: var(--font-print);
+  font-weight: 600;
+  color: var(--pen-caffeine);
+}
+
+.drink-row__serving {
+  grid-area: serving;
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+}
+
+.drink-row__tag {
+  grid-area: tag;
+  justify-self: end;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.drink-row__tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--seam);
+  vertical-align: 1px;
+}
+
+.drink-row__tag[data-tone='good'] {
+  color: var(--ink);
+}
+
+.drink-row__tag[data-tone='good']::before {
+  background: var(--lamp-ok);
+}
+
+.drink-row__tag[data-tone='warn'] {
+  color: var(--alarm);
+}
+
+.drink-row__tag[data-tone='warn']::before {
+  background: var(--lamp-warn);
+}
+
+.drink-group--custom {
+  margin-top: var(--space-5);
+}
+
+.custom-drink {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-3);
+}
+
+.field__inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── Chart additions ───────────────────────────────────────────────── */
+
+.chart .focus-band {
+  fill: var(--focus-band);
+}
+
+.chart .annot--band {
+  fill: var(--print);
+  font-weight: 500;
+}
+
+.chart .topup-mark path {
+  fill: none;
+  stroke: var(--pencil);
+  stroke-width: 1.5;
+}
+
+.chart .topup-mark text {
+  font-size: 10.5px;
+  font-weight: 600;
+  fill: var(--pencil);
+}
+
+/* ─── Today on phones: the button where the thumb is ────────────────── */
+
+@media (max-width: 900px) {
+  .add-button--inline {
+    display: none;
+  }
+
+  .add-bar {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+    background: var(--housing);
+    border-top: 1px solid var(--seam);
+  }
+
+  .add-bar .add-button {
+    width: 100%;
+  }
+
+  .shell--today {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+
+  .shell--today .snackbar {
+    bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .suggestion {
+    padding: var(--space-4);
+  }
+
+  .suggestion__title {
+    font-size: var(--text-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .sheet {
+    inset: auto 0 0 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 88dvh;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 0;
+  }
+
+  .sheet__body {
+    padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
+  }
+
+  .btn--key {
+    width: 100%;
   }
 }

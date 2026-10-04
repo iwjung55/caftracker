@@ -7,22 +7,27 @@ your usual drink still fits under your bedtime target.
 
 *Caffeine Recorder* is a working title.
 
-## What it does (MVP)
+## What it does
 
-- **Active now:** a pharmacokinetic estimate (absorption + half-life decay)
-  with an honest uncertainty band.
-- **At bedtime:** caffeine projected to still be active, against a target you set.
-- **Last cup for tonight:** dose-aware (a cold brew's cutoff is earlier than a tea's).
-- **What-if preview:** pick a drink and see the curve and every number move *before* you log it.
-- **Two-tap logging:** keys learn your usual drinks; portions (½–2×), backdating
-  (15 min / 30 min / 1 h / any time), editable mg, custom "usuals".
-- **Today's log:** with *Again*, *Edit* and *Delete*, plus undo.
-- **14-day archive:** one strip per day, so you can see *when* you drink.
-- **Settings:** set your personal half-life, bedtime, bedtime target, daily
-  reference and when your day starts, with a live chart that redraws as you go,
-  plus evidence-graded notes on using caffeine well.
-- **Works offline** once installed (service worker caches the app, never your data).
-- **Your data:** stays in this browser (IndexedDB). JSON export/import and erase-all.
+You only ever enter one thing: **what you drank.**
+
+- **One button:** "+ Add drink" opens a searchable sheet (your usual drinks
+  first, then 70+ presets including 30 energy drinks: Red Bull, Monster,
+  Celsius, Ghost, C4, Alani Nu, Bang, Prime, Reign…). Tap a drink and it's
+  logged; *Change time* and *Undo* are in the confirmation.
+- **Suggestion:** one sentence on what to do next ("Have an espresso now",
+  "Top up at 2:40 PM", "You're set until 4:50 PM", "Skip the next one",
+  "Done for today"), computed on your device from research defaults and
+  your drink history, inside fixed safety limits. Every drink in the sheet
+  carries its own tag ("Best now", "Hurts sleep · ≈55 mg at bed").
+- **A few numbers:** caffeine now (and whether you're in your focus range),
+  today vs your limit, estimated sleep impact tonight, and when you'll
+  crash.
+- **The chart:** caffeine active across the day with your focus range,
+  bedtime and target, plus today's log and a 14-day history.
+- **Optional Settings:** body weight (sizes everything in mg/kg), focus
+  hours, half-life, bedtime, target. Nothing is required.
+- **Private:** everything stays in your browser; works offline once installed.
 
 Built to grow: every metric shares one `Entry` shape and a thin metric
 registry, so sleep, water, mood, focus and exercise can be added without

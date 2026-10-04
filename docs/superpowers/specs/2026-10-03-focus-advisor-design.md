@@ -1,6 +1,28 @@
 # Focus Advisor & Insights — design
 
-Date: 2026-10-03 · Status: approved in brainstorming, awaiting spec review
+Date: 2026-10-03 · Revised 2026-10-04 (revision 2, below) · Status: revision 2 implemented
+
+## Revision 2 (2026-10-04): drinks are the only input
+
+The owner narrowed the product: **the only thing a person enters is a
+drink**, via one "+ Add drink" button. This supersedes parts of the design
+below:
+
+| Original | Revision 2 (implemented) |
+|---|---|
+| Check-ins: focus 1–5, jitters, water, workout, morning sleep | **Removed.** No inputs besides drinks. |
+| Learned Bayesian focus + jitter models (need ratings) | **Deferred.** Suggestions use research defaults plus patterns learned from drink history only: usual drinks, when your day starts (median first-drink time), tolerance (7-day average). `src/advice/engine.ts` |
+| Sleep from check-ins | **Estimated** "sleep impact tonight" (Low / Some / High) from caffeine left at bedtime. |
+| Keys + composer + arming preview | **One button → sheet → one tap.** Every drink in the sheet carries its own suggestion tag. |
+| Body weight, focus hours required | **Optional** in Settings (70 kg and 9:00–18:00 assumed; start learned from history). |
+| Insights page | **Deferred**; drink-derived findings only when built. |
+
+Kept: the focus range (≈1–3 mg/kg active), the crash (first slide back
+below the range), all hard limits (bedtime target, ≤ min(200 mg, 3 mg/kg)
+per dose, ≤ min(reference, 5.7 mg/kg) per day, 45-min spacing, jitter
+ceiling), bold advice (any predicted gain), the verdict set, and the
+privacy posture. Drink catalog expanded to 71 presets (31 energy drinks),
+verified 2026-10-04 (docs/research.md §4b).
 
 ## 1. Goal
 

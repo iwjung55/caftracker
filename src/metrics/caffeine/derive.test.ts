@@ -1,11 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import type { Settings } from '../../data/types';
 import type { CaffeineEntry } from '.';
-import { deriveDay, quickDrinks, whatStillFits } from './derive';
+import { quickDrinks } from './derive';
 import { DRINKS } from './drinks';
 
-
-const settings: Settings = { v: 1, halfLifeHours: 5, bedtimeMin: 23 * 60, dayStartMin: 4 * 60, dailyLimitMg: 400, bedtimeTargetMg: 30 };
 const at = (h: number, m = 0, dayOffset = 0) => {
   const d = new Date(2026, 9, 2 + dayOffset, h, m);
   return d.getTime();
@@ -19,31 +16,6 @@ const entry = (t: number, mg: number, label = 'Drip coffee', drinkId = 'drip-cof
   data: { v: 1, label, drinkId },
   createdAt: t,
   updatedAt: t,
-});
-
-describe('whatStillFits', () => {
-  it('offers a smaller drink once the usual no longer fits', () => {
-    const day = deriveDay([entry(at(8), 95)], settings, at(16));
-    expect(day.cutoff.kind).toBe('over');
-    const r = whatStillFits(day, settings);
-    expect(r.kind).toBe('drink');
-    if (r.kind === 'drink') {
-      expect(r.mg).toBeLessThan(95);
-      expect(r.until).toBeGreaterThan(at(16));
-    }
-  });
-
-  it('says when you drop under target if bedtime is already over', () => {
-    const day = deriveDay([entry(at(15), 300, 'Cold brew', 'cold-brew')], settings, at(17));
-    const r = whatStillFits(day, settings);
-    expect(r.kind).toBe('under-at');
-    if (r.kind === 'under-at') expect(r.at).toBeGreaterThan(day.bedtime);
-  });
-
-  it('falls back to decaf when nothing with caffeine fits', () => {
-    const day = deriveDay([], settings, at(22, 30));
-    expect(whatStillFits(day, settings).kind).toBe('decaf-only');
-  });
 });
 
 describe('quickDrinks', () => {

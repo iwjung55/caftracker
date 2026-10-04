@@ -168,10 +168,6 @@ export async function undoRemove(): Promise<void> {
   announce();
 }
 
-export function dismissUndo(): void {
-  if (state.lastRemoved) set({ lastRemoved: undefined });
-}
-
 export async function updateSettings(patch: Partial<Settings>): Promise<void> {
   const settings = { ...state.settings, ...patch };
   await db.putKV(db.KV.settings, settings);

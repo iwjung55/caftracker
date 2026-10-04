@@ -58,16 +58,6 @@ export const formatHour = (t: number) => hourFmt.format(t);
 export const formatWeekday = (t: number) => weekdayFmt.format(t);
 export const formatDate = (t: number) => dateFmt.format(t);
 
-/** "in 3 h 20 min" / "40 min ago" */
-export function formatRelative(target: number, now: number): string {
-  const diff = target - now;
-  const abs = Math.abs(diff);
-  const h = Math.floor(abs / HOUR);
-  const m = Math.round((abs % HOUR) / MINUTE);
-  const span = h > 0 ? (m > 0 ? `${h} h ${m} min` : `${h} h`) : `${m} min`;
-  return diff >= 0 ? `in ${span}` : `${span} ago`;
-}
-
 /** Minutes-after-midnight ↔ 'HH:MM' for <input type="time">. */
 export const minToHHMM = (min: number) => `${pad(Math.floor(min / 60) % 24)}:${pad(min % 60)}`;
 export function hhmmToMin(v: string): number | null {

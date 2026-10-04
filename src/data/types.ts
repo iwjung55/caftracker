@@ -54,4 +54,10 @@ export interface Settings {
   acknowledgedAt?: number;
   /** Last time a backup was exported — drives the "back up" lamp. */
   lastExportAt?: number;
+  /** Optional. Scales the focus range and dose limits (mg/kg); 70 kg assumed when unset. */
+  bodyWeightKg?: number;
+  weightUnit?: 'kg' | 'lb';
+  /** When you usually need to be sharp, minutes after midnight. */
+  focusStartMin?: number;
+  focusEndMin?: number;
 }

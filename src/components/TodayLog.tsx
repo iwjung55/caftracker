@@ -10,14 +10,16 @@ interface Props {
   onLogged: (entry: CaffeineEntry) => void;
   /** Take back a drink that was just logged. */
   onUndoLog: (entry: CaffeineEntry) => void;
+  /** Which row is open for editing (controlled, so "Change time" in the toast can open it). */
+  editingId: string | null;
+  onEditingChange: (id: string | null) => void;
 }
 
 /** How long a just-logged row keeps its own Undo button. */
 const INLINE_UNDO_MS = 2 * 60_000;
 
 /** Today's chart log: what the event pen recorded, newest first. */
-export function TodayLog({ entries, now, onRemoved, onLogged, onUndoLog }: Props) {
-  const [editing, setEditing] = useState<string | null>(null);
+export function TodayLog({ entries, now, onRemoved, onLogged, onUndoLog, editingId: editing, onEditingChange: setEditing }: Props) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const rows = [...entries].reverse();
   // The most recently *created* entry, if it was created moments ago, gets an inline Undo.
@@ -40,7 +42,7 @@ export function TodayLog({ entries, now, onRemoved, onLogged, onUndoLog }: Props
       ) : (
         <ul className="log">
           {rows.map((e) => (
-            <li key={e.id} className="log__row">
+            <li key={e.id} className="log__row" id={`entry-${e.id}`}>
               <span className="log__time">{formatTime(e.startAt)}</span>
               <span className="log__name">{e.data.label}</span>
               <span className="log__mg">{e.value} mg</span>

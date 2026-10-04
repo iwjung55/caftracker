@@ -1,24 +1,26 @@
-import { useId, useMemo, useState, type KeyboardEvent, type PointerEvent } from 'react';
+import { useMemo, useState, type KeyboardEvent, type PointerEvent } from 'react';
 import type { Settings } from '../data/types';
 import type { CaffeineEntry } from '../metrics/caffeine';
 import { HALF_LIFE_BAND } from '../metrics/caffeine/constants';
 import { roundMg, type CaffeineDay } from '../metrics/caffeine/derive';
-import { activeAt, type Dose } from '../metrics/caffeine/model';
+import { activeAt } from '../metrics/caffeine/model';
 import { formatHour, formatTime, HOUR, MINUTE } from '../lib/time';
 import { useSize } from '../lib/hooks';
-import { approx } from './Readout';
+import { approx } from '../lib/format';
 
-export interface Preview {
-  at: number;
-  mg: number;
-  label: string;
+/** Your focus range across focus hours, from the suggestion engine. */
+export interface FocusBand {
+  from: number;
+  to: number;
+  floor: number;
+  ceiling: number;
+  /** Suggested top-up time, drawn as a pencil mark. */
+  topUpAt: number | null;
 }
 
 interface Props {
+  focus?: FocusBand;
   day: CaffeineDay;
-  /** Preview of the same day with the armed drink added. */
-  previewDay: CaffeineDay | null;
-  preview: Preview | null;
   settings: Settings;
   entries: readonly CaffeineEntry[];
   /** Changes whenever a drink is logged, so the projection re-plots. */
@@ -28,14 +30,13 @@ interface Props {
 /**
  * The strip-chart recorder: time runs left→right across chart paper, the
  * pen sits at "now", the past is inked solid and the rest of the day is
- * projected dashed. Bedtime, the bedtime target and the last-cup cutoff
- * are ruled on the paper. Drag, hover or use arrow keys to read any time.
+ * projected dashed. Bedtime, the bedtime target and your focus range are
+ * ruled on the paper. Drag, hover or use arrow keys to read any time.
  */
-export function RecorderChart({ day, previewDay, preview, settings, entries, replotKey }: Props) {
+export function RecorderChart({ day, settings, entries, replotKey, focus }: Props) {
   // The paper's size comes from CSS (it fills the bezel); the SVG matches it.
   const [wrapRef, { width, height }] = useSize<HTMLDivElement>();
   const [cursor, setCursor] = useState<number | null>(null);
-  const clipId = `plot-${useId().replace(/[^a-zA-Z0-9-]/g, '')}`;
 
   const compact = width < 560;
   const m = { l: compact ? 34 : 42, r: compact ? 10 : 16, t: 34, b: 44 };
@@ -59,21 +60,15 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
     const curve = times.map((t) => activeAt(day.doses, t, day.params));
     const bandA = times.map((t) => activeAt(day.doses, t, low));
     const bandB = times.map((t) => activeAt(day.doses, t, high));
-    const ghostDoses: Dose[] | null = previewDay ? previewDay.doses : null;
-    const ghost = ghostDoses ? times.map((t) => activeAt(ghostDoses, t, day.params)) : null;
 
-    // The scale ignores the ghost, so previewing never rescales the real trace under you;
-    // a ghost that runs off the top is clipped and marked instead.
-    const peak = Math.max(...curve, ...bandA, ...bandB, settings.bedtimeTargetMg * 2.5, 100);
+    const peak = Math.max(...curve, ...bandA, ...bandB, settings.bedtimeTargetMg * 2.5, focus?.ceiling ?? 0, 100);
     const step = peak <= 160 ? 25 : peak <= 340 ? 50 : peak <= 700 ? 100 : 200;
     const yMax = Math.ceil((peak * 1.12) / step) * step;
 
     const x = (t: number) => m.l + ((t - start) / (end - start)) * plotW;
     const y = (mg: number) => m.t + (1 - mg / yMax) * plotH;
-    let ghostPeak = { mg: 0, t: start };
-    if (ghost) ghost.forEach((mg, i) => mg > ghostPeak.mg && (ghostPeak = { mg, t: times[i]! }));
-    return { start, end, plotW, plotH, times, curve, bandA, bandB, ghost, ghostPeak, yMax, step, x, y };
-  }, [width, height, day, previewDay, settings.halfLifeHours, settings.bedtimeTargetMg, m.l, m.r]);
+    return { start, end, plotW, plotH, times, curve, bandA, bandB, yMax, step, x, y };
+  }, [width, height, day, settings.halfLifeHours, settings.bedtimeTargetMg, focus?.ceiling, m.l, m.r]);
 
   const caption =
     `Estimated caffeine active now: about ${roundMg(day.activeNow)} mg. ` +
@@ -88,7 +83,7 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
     );
   }
 
-  const { start, end, plotW, plotH, times, curve, bandA, bandB, ghost, ghostPeak, yMax, step, x, y } = geo;
+  const { start, end, times, curve, bandA, bandB, yMax, step, x, y } = geo;
   const plotTop = m.t;
   const plotBottom = height - m.b;
   const nowX = x(day.now);
@@ -135,26 +130,9 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
   // Annotations
   const bedX = x(day.bedtime);
   const bedY = y(day.activeAtBedtime);
-  const c = day.cutoff;
-  const cutoffPassed = c.kind === 'over' && c.passedAt !== undefined && c.passedAt >= start;
-  const cutoffAt = c.kind === 'latest' && c.at <= end ? c.at : c.kind === 'over' && cutoffPassed ? c.passedAt! : null;
-  // With no cutoff left at all, the paper still answers "can I have another?" at the pen.
-  const noneTonight = c.kind === 'over' && !cutoffPassed && nowIn;
-  const flagAnchor = cutoffAt ?? (noneTonight ? day.now : null);
-  const doseName = day.referenceDose.label.toUpperCase();
-  const flagText = cutoffAt
-    ? `LAST ${doseName} ${formatTime(cutoffAt)}${cutoffPassed ? ' · PASSED' : ''}`
-    : noneTonight
-      ? `NO MORE ${doseName} TONIGHT`
-      : '';
-  const flagMuted = cutoffPassed || noneTonight;
-  const flagW = flagText.length * 6.6 + 16;
-  const flagX = flagAnchor !== null ? Math.min(Math.max(x(flagAnchor) - flagW / 2, m.l), width - m.r - flagW) : 0;
-
   const penY = y(day.activeNow);
   // Right after a drink the curve keeps rising; prefer the label under the pen so the projection can't cross it.
   const rising = activeAt(day.doses, day.now + 20 * MINUTE, day.params) > day.activeNow + 1;
-  const ghostBed = previewDay ? previewDay.activeAtBedtime : null;
   const showBed = day.now < day.bedtime;
 
   // Label placement: try candidate spots in priority order, skip any that leave
@@ -186,6 +164,16 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
       anchor: o[0] === 'r' ? ('start' as const) : ('end' as const),
     }));
 
+  const bandFrom = focus ? Math.max(start, focus.from) : 0;
+  const bandTo = focus ? Math.min(end, focus.to) : 0;
+  const showBand = focus !== undefined && bandTo > bandFrom;
+  const bandLabel = showBand
+    ? place(['your focus range', 'focus range'], [
+        { x: x(bandFrom) + 6, y: y(focus!.ceiling) + 14, anchor: 'start' },
+        { x: x(bandTo) - 6, y: y(focus!.ceiling) + 14, anchor: 'end' },
+      ])
+    : null;
+
   const bedLabel = place([`BED ${formatTime(day.bedtime)}`, 'BED'], [
     { x: bedX + 7, y: plotTop + 16, anchor: 'start' },
     { x: bedX - 7, y: plotTop + 16, anchor: 'end' },
@@ -196,8 +184,6 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
     { x: bedX - 7, y: targetY + 15, anchor: 'end' },
     { x: width - m.r - 6, y: targetY - 6, anchor: 'end' },
   ]);
-  const ghostLabel =
-    ghostBed !== null && showBed ? place([`→ ${approx(ghostBed)} mg`], around(bedX, y(ghostBed), ['ra', 'la', 'rb', 'lb'])) : null;
   const bedValueLabel = showBed
     ? place([`${approx(day.activeAtBedtime)} mg at bed`, `${approx(day.activeAtBedtime)} mg`], around(bedX, bedY, ['ra', 'lb', 'rb', 'la']))
     : null;
@@ -207,7 +193,6 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
         around(nowX, penY, rising ? ['rb', 'lb', 'ra', 'la'] : ['ra', 'la', 'rb', 'lb']),
       )
     : null;
-  const ghostOffScale = ghost !== null && ghostPeak.mg > yMax;
 
   // Scrubbing
   const toTime = (clientX: number, rect: DOMRect) => {
@@ -232,7 +217,7 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
     ev.preventDefault();
     setCursor(next === null ? null : Math.min(end, Math.max(start, next)));
   };
-  const cursorMg = cursor !== null ? activeAt(previewDay?.doses ?? day.doses, cursor, day.params) : 0;
+  const cursorMg = cursor !== null ? activeAt(day.doses, cursor, day.params) : 0;
   const cursorText = cursor !== null ? `${formatTime(cursor)} · ≈${roundMg(cursorMg)} mg` : '';
   const chipW = cursorText.length * 6.8 + 16;
   const chipX = cursor !== null ? Math.min(Math.max(x(cursor) - chipW / 2, m.l), width - m.r - chipW) : 0;
@@ -254,6 +239,22 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
           onKeyDown={onKey}
           onBlur={() => setCursor(null)}
         >
+          {/* Focus range across focus hours (drawn first, under everything) */}
+          {showBand && (
+            <rect
+              className="focus-band"
+              x={x(bandFrom)}
+              y={y(focus!.ceiling)}
+              width={x(bandTo) - x(bandFrom)}
+              height={y(focus!.floor) - y(focus!.ceiling)}
+            />
+          )}
+          {bandLabel && (
+            <text className="annot annot--band" x={bandLabel.x} y={bandLabel.y} textAnchor={bandLabel.anchor}>
+              {bandLabel.text}
+            </text>
+          )}
+
           {/* Sleep region */}
           <rect className="night" x={bedX} y={plotTop} width={Math.max(0, x(end) - bedX)} height={plotBottom - plotTop} />
 
@@ -308,22 +309,6 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
             className={replotKey > 0 ? 'trace trace--projected replot' : 'trace trace--projected'}
             d={line(curve, day.now, end)}
           />
-          <defs>
-            <clipPath id={clipId}>
-              <rect x={m.l} y={plotTop} width={plotW} height={plotH} />
-            </clipPath>
-          </defs>
-          {ghost && <path className="ghost" clipPath={`url(#${clipId})`} d={line(ghost, preview?.at ?? day.now, end)} />}
-          {ghostOffScale && (
-            <text
-              className="annot annot--pencil"
-              x={Math.min(width - m.r - 40, Math.max(m.l + 40, x(ghostPeak.t)))}
-              y={plotTop + 13}
-              textAnchor="middle"
-            >
-              ↑ {approx(ghostPeak.mg)} mg
-            </text>
-          )}
 
           {/* Value at bedtime */}
           {showBed && (
@@ -336,24 +321,14 @@ export function RecorderChart({ day, previewDay, preview, settings, entries, rep
               )}
             </g>
           )}
-          {ghostBed !== null && showBed && ghostBed <= yMax && (
-            <g>
-              <circle cx={bedX} cy={y(ghostBed)} r={3.5} fill="var(--pencil)" />
-              {ghostLabel && (
-                <text className="annot annot--pencil" x={ghostLabel.x} y={ghostLabel.y} textAnchor={ghostLabel.anchor}>
-                  {ghostLabel.text}
-                </text>
-              )}
-            </g>
-          )}
-
-          {/* Last-cup cutoff */}
-          {flagAnchor !== null && (
-            <g>
-              {cutoffAt !== null && <line className="rule-cutoff" x1={x(cutoffAt)} x2={x(cutoffAt)} y1={plotTop} y2={plotBottom} />}
-              <rect className={flagMuted ? 'flag flag--passed' : 'flag'} x={flagX} y={6} width={flagW} height={20} rx={3} />
-              <text className={flagMuted ? 'flag-text flag-text--passed' : 'flag-text'} x={flagX + flagW / 2} y={20} textAnchor="middle">
-                {flagText}
+          {/* Suggested top-up: a pencil mark in the event lane */}
+          {focus?.topUpAt != null && focus.topUpAt >= start && focus.topUpAt <= end && (
+            <g className="topup-mark">
+              <path
+                d={`M${x(focus.topUpAt) - 4},${plotBottom + 11} L${x(focus.topUpAt)},${plotBottom + 4} L${x(focus.topUpAt) + 4},${plotBottom + 11} Z`}
+              />
+              <text x={x(focus.topUpAt) + 6} y={plotBottom + 12}>
+                top up
               </text>
             </g>
           )}

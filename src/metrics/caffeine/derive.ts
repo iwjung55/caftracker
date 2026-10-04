@@ -3,7 +3,7 @@ import { bedtimeFor, DAY, logicalDayKey, logicalDayStart, shiftLogicalDay } from
 import type { CaffeineEntry } from '.';
 import { DEFAULT_REFERENCE_DOSE_MG, HALF_LIFE_BAND } from './constants';
 import { DEFAULT_QUICK_IDS, DRINKS, type Drink, findDrink } from './drinks';
-import { activeAt, type CutoffResult, type Dose, latestDoseTime, type ModelParams, timeUnder } from './model';
+import { activeAt, type CutoffResult, type Dose, latestDoseTime, type ModelParams } from './model';
 
 /** Everything the dashboard shows, derived from raw entries at time `now`. */
 export interface CaffeineDay {
@@ -132,44 +132,3 @@ export function archive(entries: readonly CaffeineEntry[], settings: Settings, n
 
 /** Round to the nearest 5 mg — the model can't honestly say more than that. */
 export const roundMg = (mg: number) => Math.max(0, Math.round(mg / 5) * 5);
-
-export type StillFits =
-  /** A smaller drink still keeps bedtime under target if you have it by `until`. */
-  | { kind: 'drink'; label: string; mg: number; until: number }
-  /** Nothing with meaningful caffeine fits; decaf is fine. */
-  | { kind: 'decaf-only' }
-  /** Bedtime is already over target; you drop under it at `at` (or not within a day). */
-  | { kind: 'under-at'; at: number | null };
-
-/** Smaller, common options to suggest when the usual drink no longer fits. */
-const FALLBACK_IDS = ['black-tea', 'cola', 'green-tea', 'dark-chocolate'] as const;
-
-/**
- * "What can I still have?" — the most caffeine among a few common options
- * (half of your usual included) that keeps bedtime under target, and how
- * long it stays available. Answers the evening dead end.
- */
-export function whatStillFits(day: CaffeineDay, settings: Settings, quick: readonly Drink[] = []): StillFits {
-  const target = settings.bedtimeTargetMg;
-  if (day.activeAtBedtime >= target) {
-    return { kind: 'under-at', at: timeUnder(day.doses, day.now, target, day.params) };
-  }
-  const options: { label: string; mg: number }[] = [
-    { label: `half a ${day.referenceDose.label}`, mg: Math.round(day.referenceDose.mg / 2) },
-    ...quick.map((d) => ({ label: d.label.toLowerCase(), mg: d.mg })),
-    ...FALLBACK_IDS.map((id) => DRINKS.find((d) => d.id === id)!).map((d) => ({ label: d.label.toLowerCase(), mg: d.mg })),
-  ].filter((o) => o.mg >= 10 && o.mg < day.referenceDose.mg);
-
-  let best: { label: string; mg: number; until: number } | null = null;
-  for (const o of options) {
-    const r = latestDoseTime(day.doses, day.now, day.bedtime, o.mg, target, day.params);
-    if (r.kind !== 'latest') continue;
-    if (!best || o.mg > best.mg || (o.mg === best.mg && r.at > best.until)) best = { ...o, until: r.at };
-  }
-  return best ? { kind: 'drink', ...best } : { kind: 'decaf-only' };
-}
-
-/** Cutoff for a specific drink (e.g. the one being considered), against what's already logged. */
-export function cutoffFor(day: CaffeineDay, settings: Settings, mg: number): CutoffResult {
-  return latestDoseTime(day.doses, day.now, day.bedtime, mg, settings.bedtimeTargetMg, day.params);
-}

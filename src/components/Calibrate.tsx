@@ -15,7 +15,7 @@ import type { Drink } from '../metrics/caffeine/drinks';
 import { doseActiveAfter } from '../metrics/caffeine/model';
 import { formatTime, hhmmToMin, HOUR, minToHHMM } from '../lib/time';
 import type { UndoAction } from '../App';
-import { approx } from './Readout';
+import { approx } from '../lib/format';
 import { RecorderChart } from './RecorderChart';
 
 interface Props {
@@ -72,7 +72,7 @@ export function Calibrate({ day, settings, entries, customDrinks, persisted, sho
               Today, as calibrated
             </span>
           </div>
-          <RecorderChart day={day} previewDay={null} preview={null} settings={settings} entries={entries} replotKey={0} />
+          <RecorderChart day={day} settings={settings} entries={entries} replotKey={0} />
         </div>
         <p className="calibrate__summary" aria-live="polite">
           {liveSummary}
@@ -80,6 +80,91 @@ export function Calibrate({ day, settings, entries, customDrinks, persisted, sho
       </aside>
 
       <div className="calibrate__controls">
+        <section className="cal-section" aria-labelledby="cal-you">
+          <h2 id="cal-you">You (optional)</h2>
+          <p className="fineprint">
+            Nothing here is required. Suggestions start from averages and learn from the drinks you log.
+          </p>
+
+          <div className="cal-row">
+            <label className="cal-row__label" htmlFor="weight">
+              Body weight
+            </label>
+            <p className="cal-row__help">
+              Sizes your focus range and per-dose and daily limits to you (about 1–3 mg per kg). Until you add it, 70 kg
+              is assumed. Stays on this device.
+            </p>
+            <div className="cal-row__control">
+              <span className="field__inline">
+                <input
+                  id="weight"
+                  className="input input--mg"
+                  inputMode="decimal"
+                  placeholder={settings.weightUnit === 'lb' ? '154' : '70'}
+                  defaultValue={
+                    settings.bodyWeightKg === undefined
+                      ? ''
+                      : settings.weightUnit === 'lb'
+                        ? String(Math.round(settings.bodyWeightKg * 2.20462))
+                        : String(Math.round(settings.bodyWeightKg))
+                  }
+                  key={`${settings.weightUnit ?? 'kg'}-${settings.bodyWeightKg ?? ''}`}
+                  onBlur={(e) => {
+                    const raw = e.target.value.trim();
+                    if (raw === '') return set({ bodyWeightKg: undefined });
+                    const n = Number(raw);
+                    const kg = settings.weightUnit === 'lb' ? n / 2.20462 : n;
+                    if (kg >= 30 && kg <= 250) set({ bodyWeightKg: Math.round(kg * 10) / 10 });
+                    else e.target.value = '';
+                  }}
+                />
+                <select
+                  className="input"
+                  aria-label="Weight unit"
+                  value={settings.weightUnit ?? 'kg'}
+                  onChange={(e) => set({ weightUnit: e.target.value as 'kg' | 'lb' })}
+                >
+                  <option value="kg">kg</option>
+                  <option value="lb">lb</option>
+                </select>
+              </span>
+            </div>
+          </div>
+
+          <div className="cal-row">
+            <label className="cal-row__label" htmlFor="focus-start">
+              Focus hours
+            </label>
+            <p className="cal-row__help">
+              When you need to be sharp. Suggestions aim to keep you in range during these hours and stay quiet outside
+              them. Leave the start empty to learn it from when you usually have your first drink.
+            </p>
+            <div className="cal-row__control">
+              <span className="field__inline">
+                <input
+                  id="focus-start"
+                  className="input"
+                  type="time"
+                  aria-label="Focus hours start"
+                  value={settings.focusStartMin === undefined ? '' : minToHHMM(settings.focusStartMin)}
+                  onChange={(e) => set({ focusStartMin: e.target.value ? (hhmmToMin(e.target.value) ?? undefined) : undefined })}
+                />
+                to
+                <input
+                  className="input"
+                  type="time"
+                  aria-label="Focus hours end"
+                  value={minToHHMM(settings.focusEndMin ?? 18 * 60)}
+                  onChange={(e) => {
+                    const v = hhmmToMin(e.target.value);
+                    if (v !== null) set({ focusEndMin: v });
+                  }}
+                />
+              </span>
+            </div>
+          </div>
+        </section>
+
         <section className="cal-section" aria-labelledby="cal-body">
           <h2 id="cal-body">Your body</h2>
 

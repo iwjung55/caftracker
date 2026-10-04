@@ -133,6 +133,41 @@ Presets are generic (no brand names) and editable before logging.
 | Caffeine tablet | 200 | 100–200 | OTC max single dose |
 | Dark chocolate 1 oz | 23 | 12–35 | USDA 170273 |
 
+### 4b. Brand presets (verified 2026-10-04)
+
+Checked against brand sites/labels where possible, else the CSPI caffeine
+chart (https://www.cspi.org/caffeine-chart), else a secondary source.
+Presets are editable after logging; labels change, so the app shows ranges
+where brands publish them.
+
+| Preset | mg | Source |
+|---|---|---|
+| Red Bull 8.4 / 12 / 16 oz, Sugarfree 8.4 | 80 / 114 / 151 / 80 | redbull.com (label); Sugarfree via CSPI |
+| Monster 16 oz / Zero Ultra / Java Monster 15 oz | 160 / 150 / 200 | monsterenergy.com (label; Zero Ultra was 140, Java was 188) |
+| Celsius 12 oz / Essentials 16 oz | 200 / 270 | CSPI |
+| Alani Nu 12 oz | 200 | alaninu.com (minis are 100) |
+| Ghost Energy 16 oz | 200 | secondary (caffeineinformer) |
+| C4 Energy / C4 Ultimate 16 oz | 200 / 300 | cellucor.com |
+| Prime Energy 16 oz | 200 | drinkprime.com (12 oz is also 200) |
+| Bang / Reign / Bucked Up 16 oz | 300 / 300 / 300 | CSPI / reignbodyfuel.com / retailer (secondary) |
+| Rockstar / NOS / Full Throttle 16 oz | 160 each | CSPI |
+| ZOA 16 oz | 210 | zoaenergy.com FAQ (reformulated; older sources say 160) |
+| Bloom Sparkling Energy 12 oz | 180 | bloomnu.com |
+| 3D Energy 16 oz | 200 | secondary |
+| Starbucks Doubleshot / Tripleshot Energy 15 oz | 135 (125–160 by flavor) / 225 | pepsicoproductfacts.com |
+| 5-hour Energy / Extra Strength | 200 / 230 | CSPI |
+| Starbucks Pike Place Tall / Grande / Venti | 260 / 350 / 440 (midpoints of 235–290 / 315–390 / 390–490) | starbucks.com menu |
+| Starbucks Cold Brew / Caffè Latte, Grande | 205 / 150 | starbucks.com |
+| Dunkin' hot coffee S / M / L | 180 / 210 / 270 | Dunkin' (2020) + CSPI |
+| Dunkin' iced coffee, Medium | 297 (Dunkin' range 198–398) | secondary |
+| McDonald's coffee, Medium | 145 | secondary (no official figure) |
+| Coca-Cola / Diet Coke / Coke Zero | 34 / 46 / 34 | coca-colacompany.com / CSPI |
+| Pepsi / Mountain Dew / Mtn Dew Zero | 38 / 54 / 68 | pepsicoproductfacts.com |
+| Dr Pepper | 41 | CSPI |
+| Yerba Madre (Guayakí) 15.5 oz | 150 | yerbamadre.com |
+| Liquid I.V. Energy Multiplier | 100 | liquid-iv.com |
+| C4 Original / Ghost Legend pre-workout, 1 scoop | 200 / 300 | cellucor.com / CSPI (Legend V5 unconfirmed) |
+
 ---
 
 ## 5. Competitive landscape (Oct 2026)
